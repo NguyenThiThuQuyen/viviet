@@ -93,7 +93,7 @@
                                         <div class="form-group form-check">
                                             <input type="checkbox" class="form-check-input" id="exampleCheck1">
                                             <label class="form-check-label" for="exampleCheck1">Remember me</label>
-                                           <button type="submit" class="btn btn_item float-right mr-1">Submit</button>
+                                           <button type="submit" class="btn btn_item float-right mr-1">Login</button>
 
                                         </div> 
                                     </div>

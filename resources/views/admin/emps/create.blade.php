@@ -1,6 +1,8 @@
 @extends('admin.layout')
 
 @section('content')
+    <title>Thêm mới nhân viên</title>
+
     <style>
             html, body {
             width: 100%;
@@ -135,5 +137,6 @@
 </div>
 </div>
 </div>
+
 
 @endsection

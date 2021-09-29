@@ -45,7 +45,7 @@
 
         .carousel-caption {
             position: absolute;
-            top: 50%;
+            top: 30%;
         }
 
         .carousel-caption h1 {
@@ -118,7 +118,7 @@
         </ul>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="img-wrap" src="image/29.jpeg" alt="">
+                <img class="img-wrap" src="image/bn3.png" alt="">
                 <div class="carousel-caption">
                     <h1 class="display-2">Vị Việt</h1>
                     <h3>Yêu thương quay về - là bếp lửa lên</h3>
@@ -129,10 +129,10 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="img-wrap" src="image/58.jpeg" alt="">
+                <img class="img-wrap" src="image/29.jpeg" alt="">
             </div>
             <div class="carousel-item">
-                <img class="img-wrap" src="image/56.jpeg" alt="">
+                <img class="img-wrap" src="image/58.jpeg" alt="">
             </div>
 
         </div>

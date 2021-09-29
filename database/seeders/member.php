@@ -7,6 +7,6 @@ class member extends Seeder
     public function run(){
         DB::table('users')->insert([
             
-        ])
+        ]);
     }
 }

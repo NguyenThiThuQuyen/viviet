@@ -1,6 +1,7 @@
 @extends('admin.layout')
-
 @section('content')
+    <title>Nhân Sự</title>
+
 <style>
             html, body {
             width: 100%;

@@ -1,7 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Guest\HomepageController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\MaterialController;
+use App\Http\Controllers\Admin\TypeMaterialController;
+use App\Http\Controllers\Admin\TypeofdishController;
+use App\Http\Controllers\Admin\DishController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,53 +21,48 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-// Route::get('/', [HomeController::class, 'index']);
-
-// login
-Route::get('/login', [HomeController::class, 'loginForm']);
-Route::post('/login', [HomeController::class, 'login']);
-
-
-// register
-Route::get('/register', [HomeController::class, 'registerForm']);
-Route::post('/register', [HomeController::class, 'register']);
-
-
-//homepage
-Route::get('/homepage', [HomeController::class, 'homepageForm']);
-Route::post('/homepage', [HomeController::class, 'homepage']);
-
-
-//menu
-Route::get('/menu', [HomeController::class, 'menuForm']);
-Route::post('/menu', [HomeController::class, 'menu']);
-
-
-//list_emp
-Route::get('/list_emp', [HomeController::class, 'list_empForm']);
-Route::post('/list_emp', [HomeController::class, 'list_emp']);
-
-//addusers
-Route::get('/addusers', [HomeController::class, 'addusersForm']);
-Route::post('/addusers', [HomeController::class, 'addusers']);
-
-
-Route::get('/admin/emp', function(){
-    return view('admin.emp.list');
+Route::get('/', function () {
+    return view('welcome');
 });
 
-Route::get('/admin/emp/create', function(){
-    return view('admin.emp.create');
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+// Route::get('/guest.homepage.index', function () {
+//     return view('guest.homepage.index');
+// })->middleware(['auth'])->name('guest.homepage.index');
+
+Route::get('/guest.homepage.menu', function () {
+    return view('guest.homepage.menu');
+})->middleware(['auth'])->name('guest.homepage.menu');
+
+require __DIR__.'/auth.php';
+
+
+
+
+
+//khachhang
+Route::get('/',[HomepageController::class, 'index']);
+Route::get('/homepage/menu',[HomepageController::class, 'menu']);
+
+
+// nhanvien
+Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function (){
+    Route::get('/', [DashboardController::class, 'index']);
+
+
+//danh sách thêm sửa xóa
+
+        //nguyen lieu
+        Route::resource('typematerials', TypeMaterialController::class);
+        Route::resource('materials', MaterialController::class);
+
+        //mon an
+        Route::resource('typeofdishes', TypeofdishController::class);
+        Route::resource('dishes', DishController::class);
+
 });
 
-Route::get('/admin/emp/edit', function(){
-    return view('admin.emp.edit');
-});
-
-Route::get('/admin/emp/addusers', function(){
-    return view('admin.emp.addusers');
-});
-
-Route::get('/admin/emp/list_emp', function(){
-    return view('admin.emp.list_emp');
-});
+?>
