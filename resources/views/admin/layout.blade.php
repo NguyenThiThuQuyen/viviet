@@ -11,6 +11,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=WindSong:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Carattere&display=swap" rel="stylesheet">
 <style>
       html, body {
           width: 100%;
@@ -18,6 +21,10 @@
           font-family: 'Arial';
           font-size: 19px;
           color: #222;
+        }
+
+        .font-text {
+            font-family: 'Carattere', cursive;
         }
 
         .logo-font {
@@ -70,6 +77,46 @@
         a:link {
           text-decoration:none;
         }
+
+        .carousel-inner img {
+            width: 100%;
+        }
+
+        .carousel-caption {
+            position: absolute;
+            top: 30%;
+        }
+
+        .carousel-caption h1 {
+            font-size: 400%;
+            /* text-transform: uppercase; */
+            text-shadow: 5px 5px 15px #000;
+        }
+
+        .carousel-caption h3 {
+            font-size: 200%;
+            text-shadow: 2px 2px 10px #000;
+        }
+
+        .btn-light {
+            background-color: rgb(214, 91, 47);
+            border: 1px solid white;
+        }
+
+        .btn-light:hover {
+            background-color: rgb(206, 80, 35);
+            border: 1px solid white;
+        }
+
+        .img-wrap {
+            height: 750px;
+            overflow: hidden;
+        }
+
+        .img-wrap img {
+            height: 100%;
+            width: auto;
+        }
         
 
 
@@ -90,7 +137,7 @@
         <div class="collapse navbar-collapse" style="margin-left:300px" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="/"><i class="fas fa-home mr-1"></i>Trang chủ</a>
+              <a class="nav-link" href="/admin/"><i class="fas fa-home mr-1"></i>Trang chủ</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Khách hàng</a>
@@ -99,7 +146,7 @@
                 <a class="nav-link" href="#">Nhân sự</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Thực đơn</a>
+                <a class="nav-link" href="{{ route('admin.dishes.index') }}">Thực đơn</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Khu vực</a>
@@ -108,7 +155,7 @@
                 <a class="nav-link" href="#">Đặt Bàn</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Quản lý kho</a>
+                <a class="nav-link" href="{{ route('admin.materials.index') }}">Quản lý kho</a>
             </li>
             <!-- <li class="nav-item">
                 <a class="nav-link" href="#">Thống kê</a>

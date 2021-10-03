@@ -9,7 +9,6 @@ use App\Http\Controllers\Admin\TypeofdishController;
 use App\Http\Controllers\Admin\DishController;
 
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,38 +20,67 @@ use App\Http\Controllers\Admin\DishController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth'])->name('dashboard');
 
 // Route::get('/guest.homepage.index', function () {
 //     return view('guest.homepage.index');
 // })->middleware(['auth'])->name('guest.homepage.index');
 
-Route::get('/guest.homepage.menu', function () {
-    return view('guest.homepage.menu');
-})->middleware(['auth'])->name('guest.homepage.menu');
+// Route::get('/guest.homepage.menu', function () {
+//     return view('guest.homepage.menu');
+// })->middleware(['auth'])->name('guest.homepage.menu');
 
 require __DIR__.'/auth.php';
 
 
+/*
+- nhân sự
+        + vtlv
+        + 
+- khách hàng
+        + thông tin
+        + khtt
+- kho hàng
+        + nguyên liệu
+        + loại nguyên liệu
+        + nhập/xuất hàng
+        + hàng tồn kho
+        + nhà cung cấp
+- thực đơn
+        + món ăn
+        + loại món ăn
+        + khuyến mãi
+        + 
+- đặt bàn
+        + phiếu đạt
+        + bàn
+        + khu vực
+        + ghép bàn
+- thanh toán
+
+*/
 
 
 
 //khachhang
-Route::get('/',[HomepageController::class, 'index']);
-Route::get('/homepage/menu',[HomepageController::class, 'menu']);
-
+Route::get('/guest',[HomepageController::class, 'index']);
+Route::get('/menu',[HomepageController::class, 'menu']);
+Route::get('/booking',[HomepageController::class, 'booking']);
 
 // nhanvien
-Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function (){
-    Route::get('/', [DashboardController::class, 'index']);
+// Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function (){
+//     Route::get('/', [DashboardController::class, 'index']);
 
+Route::prefix('admin')->name('admin.')->group(function (){
+        Route::view('/','admin.dashboard.index');
 
+        // Route::resource('dishes', DishController::class);
 //danh sách thêm sửa xóa
 
         //nguyen lieu
@@ -63,6 +91,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function (){
         Route::resource('typeofdishes', TypeofdishController::class);
         Route::resource('dishes', DishController::class);
 
-});
+})
+
 
 ?>

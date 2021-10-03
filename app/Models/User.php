@@ -12,6 +12,11 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    //là khi giá trị mặc định (CUSTOMER) được tạo bên table_users sẽ có giá trị là 'customer' bên đây
+    public const ADMIN = 'admin';
+    public const CUSTOMER = 'customer';
+
+
     /**
      * The attributes that are mass assignable.
      *
@@ -20,7 +25,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
-        'password',
+        'password'
     ];
 
     /**
@@ -39,7 +44,15 @@ class User extends Authenticatable
      * @var array
      */
 
-    // protected $casts = [
-    //     'email_verified_at' => 'datetime',
-    // ];
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+    ];
+
+    public function boughtOrders(){
+        return $this->hasMany(Order::class, 'customer_id');
+    }
+
+    public function soldOrders(){
+        return $this->hasMany(Order::class, 'staff_id');
+    }
 }

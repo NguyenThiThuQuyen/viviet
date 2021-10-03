@@ -16,4 +16,9 @@ class HomepageController extends Controller
     {
         return view('guest.homepage.menu');
     }
+
+    public function booking()
+    {
+        return view('guest.homepage.booking');
+    }
 }

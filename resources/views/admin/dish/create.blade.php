@@ -1,6 +1,4 @@
-
 @extends('admin.layout')
-
 @section('content')
 <title>Thêm mới món ăn</title>
     
@@ -50,9 +48,10 @@
                         <h2>THÊM MỚI MÓN ĂN</h2>
                     </div>
                     <div class="col-8">
-                    <div class="form-container ml-5 mt-5">
+                    <div class="form-container ml-5 mt-3">
                     <h5>Nhập thông tin:</h5>
-                    <form action="{{ route('admin.dishes.store') }}" method="post">
+                    <form action="{{ route('admin.dishes.store') }}" method="post" enctype="multipart/form-data">
+                    <!-- <form action="{{ route('admin.dishes.store') }}" method="post"> -->
                         @csrf
                         @if ($errors->any())
                             <div class="alert alert-danger">
@@ -69,9 +68,8 @@
                             <input type="text" class="form-control" name="name" id="name">
                             </div>
                         </div>
-                        <div class="form-group row mt-5">
-                            <label for="typeofdish_id" class="col-sm-3 col-form-label form_label">Loại món ăn</label>
-                            
+                        <div class="form-group row mt-4">
+                            <label for="typeofdish_id" class="col-sm-3 col-form-label form_label">Loại món ăn</label>                            
                             <div class="col-sm-8">
                             <select class="custom-select" name="typeofdish_id">
                                 <option selected>Chọn</option>
@@ -85,9 +83,14 @@
                         </div>
                         <div class="form-group row mt-4">
                             <label for="image" class="col-sm-3 col-form-label form_label">Hình ảnh</label>
-                            <div class="form-group">
-                                <!-- <label for="exampleFormControlFile1">Example file input</label> -->
+                            <div class="form-group ml-3 mt-2">     
                                 <input type="file" class="form-control-file" name="image" id="image">
+                            </div>
+                        </div>
+                        <div class="form-group row mt-4">
+                            <label for="price" class="col-sm-3 col-form-label form_label">Giá</label>
+                            <div class="col-sm-8">
+                            <input type="number" min="0" class="form-control" name="price" id="price">
                             </div>
                         </div>
                         <div class="form-group row mt-4">
@@ -99,8 +102,7 @@
                         <div class="form-group row float-right mr-5 mt-3" >
                             <div class="form-group form-check">
                             <button type="submit" class="btn btn_item">Lưu</button>
-                            <button type="submit" class="btn border border-dark text-dark bg-light"><a href="#"></a>Hủy</button>                    
-        
+                            <button type="submit" class="btn border border-dark text-dark bg-light"><a href="#"></a>Hủy</button>                            
                             </div> 
                         </div>
                     </form>   
@@ -110,5 +112,4 @@
             </div>
         </div>
     </div>
-
 @endsection

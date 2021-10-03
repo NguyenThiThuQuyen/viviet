@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Admin;
 
-// use App\Http\Controllers\Admin\Typeofdish;
 use App\Http\Controllers\Controller;
 use App\Models\Dish;
 use App\Models\Typeofdish;
@@ -40,15 +39,41 @@ class DishController extends Controller
      */
     public function store(Request $request)
     {
+       
+        
         $data = $request->validate([
-            //dạng chuỗi
-            // 'name' => 'required|string', 
-            'name' => ['required', 'string'], //dạng mảng
-            'image' => ['required', 'string'],
-            'description' => 'required',
+  
+            'name' => ['required', 'string'],
+            'description' => ['required', 'string'],
+
+
+            'image' => ['required', 'image'],
             'typeofdish_id' => ['required', 'exists:typeofdishes,id'],
+            'price' => 'required|numeric|min:0'
+
         ]);
-        Dish::create($data);
+      
+       
+        // $dish = new Dish();
+        // $dish->name = $data['name'];
+        // $dish->description = $data['description'];
+        // $dish->typeofdish_id = $request->typeofdish_id;
+        // $image = $request->file('image');
+        // $storedPath = $image->move('hinhanh', $image->getClientOriginalName());
+        // $dish->image= $image->getClientOriginalName();
+        // $dish->save();
+
+
+
+
+        $data['image'] = $request->file('image')->store('public/dishes');
+
+        $dish = Dish::create($data);
+        $dish->dishprices()->create([
+            'apply' => now(),
+            'price' => $request->price
+        ]);
+
         return redirect()->route('admin.dishes.index');
     }
 
@@ -60,7 +85,8 @@ class DishController extends Controller
      */
     public function show(Dish $dish)
     {
-        //
+        return view('admin.dishes.index', compact('dishes'));
+        
     }
 
     /**
@@ -72,6 +98,7 @@ class DishController extends Controller
     public function edit(Dish $dish)
     {
         return view('admin.dish.edit', compact('dish'));
+        
     }
 
     /**
@@ -84,13 +111,20 @@ class DishController extends Controller
     public function update(Request $request, Dish $dish)
     {
         $data = $request->validate([
-            //dạng chuỗi
+            
             // 'name' => 'required|string', 
-            'name' => ['required', 'string'], //dạng mảng
+            'name' => ['required', 'string'],
             'image' => ['required', 'string'],
-            'description' => 'required',
+            'description' => ['required', 'string'],
+            'price' => 'required|numeric|min:0'
         ]);
         $dish->update($data);
+
+        $dish->dishprices()->create([
+            'apply' => now(),
+            'price' => $request->price
+        ]);
+
         return redirect()->route('admin.dishes.index');
     }
 
@@ -102,7 +136,9 @@ class DishController extends Controller
      */
     public function destroy(Dish $dish)
     {
+        $dish->prices()->delete();
         $dish->delete();
         return redirect()->route('admin.dishes.index');
+
     }
 }

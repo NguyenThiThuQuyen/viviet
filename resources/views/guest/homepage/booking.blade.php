@@ -1,6 +1,7 @@
+
 <!DOCTYPE html>
 <html>
-    <head>
+    <head> 
         <title>Booking</title>
         <meta charset="uft-8">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
@@ -17,15 +18,12 @@
             font-family: 'Inter', sans-serif;
             font-size: 16px;
        }
-
        .btn {
            width: 130px;
        }
-
        a:link {
         text-decoration: none;
        }
-
        .font {
             font-family: 'Playball', cursive;
             font-size: 80px
@@ -33,23 +31,19 @@
         .carousel-inner img {
             width: 100%;
         }
-
         .carousel-caption {
             position: absolute;
             top: 5%;
         }
-
         .carousel-caption h1 {
             font-size: 400%;
             text-transform: uppercase;
             text-shadow: 5px 5px 15px #000;
         }
-
         .carousel-caption h3 {
             font-size: 200%;
             text-shadow: 2px 2px 10px #000;
         }
-
         
         .form-container {
             padding: 32px;
@@ -58,34 +52,28 @@
             font-weight: 545;
             margin-left:10% ;
         }
-
         .form-control {
             width: 95%;
         }
-
         .color {
             color: rgb(214, 91, 47);
         }       
-
         .btn-light {
             background-color: rgb(214, 91, 47);
             border: 1px solid white;
           
         }
-
         .btn-light:hover {
             background-color: rgb(206, 80, 35);
             border: 1px solid white;
         }
-
         .nav-link {
             display: block;
             padding: 6px 12px;  
         }
-
     </style>
-    </head>
-    <body >
+    <!-- </head>
+    <body > -->
         <div class="container-fluid">
             <div class="row m-3">
                   <div class="col-4">
@@ -237,7 +225,7 @@
         </div>
 
 
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
     </body>
 </html>

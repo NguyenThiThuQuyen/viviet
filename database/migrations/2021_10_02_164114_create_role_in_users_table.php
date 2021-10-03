@@ -3,8 +3,9 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Models\User;
 
-class CreateDishesTable extends Migration
+class CreateRoleInUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +14,9 @@ class CreateDishesTable extends Migration
      */
     public function up()
     {
-        Schema::create('dishes', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('image');
-            $table->text('description');
-            $table->foreignId('typeofdish_id');
-            // $table->timestamps();
+        Schema::table('users', function (Blueprint $table) {
+            //kiểu hằng số, sẽ khai báo bên User
+            $table->string('role')->default(User::CUSTOMER);
         });
     }
 
@@ -30,6 +27,8 @@ class CreateDishesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('dishes');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('role');
+        });
     }
 }

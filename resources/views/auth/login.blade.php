@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -102,7 +103,7 @@
                                             <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
                                             <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
                                         </label>
-                                        <button type="submit" class="btn btn_item float-right mr-1"><a href="/homepage">Login</a></button>
+                                        <button type="submit" class="btn btn_item float-right mr-1"><a href="/homepage/">Login</a></button>
 
                                         <div class="flex items-center justify-end mt-4">
 
@@ -115,6 +116,7 @@
                                     </div>
                                 </div>
                                 </form>
+
                             </div>
 
                             <div class="text-center">

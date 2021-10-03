@@ -1,4 +1,3 @@
-
 @extends('admin.layout')
 
 @section('content')
@@ -54,7 +53,7 @@
                     </div>
                     <div class="col-12 mt-4">
 
-                      <div class="container">
+                        <div class="container">
                         <table class="table table-bordered table-striped text-center">
                         <thead>
                             <tr>
@@ -63,9 +62,9 @@
                               <th scope="col">Tên món ăn</th>
                               <th scope="col">Tên loại</th>
                               <th scope="col">Hình ảnh</th>
+                              <th scope="col">Giá</th>
                               <th scope="col">Mô tả</th>
-                              <th scope="col">Điều chỉnh</th>
-                            
+                              <th scope="col">Điều chỉnh</th>                            
                             </tr>
                         </thead>
                         <tbody>
@@ -73,29 +72,32 @@
                         @foreach($dishes as $dish)
                             <tr>
                               <!-- <th scope="row">1</th> -->
-                              <td>{{ $dish->id }}</td>
-                              <td>{{ $dish->name }}</td>
-                              <td>{{ $dish->typeofdish->name??'error'}}</td>
-                              <td>{{ $dish->image }}</td>
-                              <td>{{ $dish->discription }}</td>
-                              <td>
-                                <a href="{{ route('admin.dishes.show', $dish ) }}"><i class="fas fa-eye mr-5"></i></a>
-                                <a href="{{ route('admin.dishes.edit', $dish ) }}"><i class="fas fa-pen mr-4"></i></a>
+                                <td>{{ $dish->id }}</td>
+                                <td>{{ $dish->name }}</td>
+                                <td>{{ $dish->typeofdish->name??'error'}}</td>
+                                <td>                            
+                                    <img src="{{ Storage::url($dish->image) }}" alt=""  height="100" weight="80">
+                                    <!-- <img src="{{ asset('public/hinhanh/'.$dish->image) }}" height="100" weight="80"> -->
+                                </td>
+                                <td>{{ $dish->currentprice->price }}</td>
+                                <!-- <td>{{"gia"}}</td> -->
+                                <td>{{ $dish->description }}</td>
+                                <td>
+                                    <a href="{{ route('admin.dishes.show', $dish ) }}"><i class="fas fa-eye mr-5"></i></a>
+                                    <a href="{{ route('admin.dishes.edit', $dish ) }}"><i class="fas fa-pen mr-4"></i></a>
 
-                                <form action="{{ route('admin.dishes.destroy', $dish) }}" method="post" class="d-inline">
-                                  @csrf
-                                  @method('DELETE')
-                                  <button href="" type="submit" class="btn btn-white"><i class="fas fa-trash-alt"></i></button>
-                                </form>
-                              </td>
+                                    <form action="{{ route('admin.dishes.destroy', $dish) }}" method="post" class="d-inline">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button href="" type="submit" class="btn btn-white"><i class="fas fa-trash-alt"></i></button>
+                                    </form>
+                                </td>
                             </tr>
                         @endforeach
                         @endif
                         </tbody>
                         </table>
-                      </div>
-
-              
+                      </div>             
                     </div>
                 </div>
             </div>
@@ -103,3 +105,4 @@
   </div>
 
 @endsection
+

@@ -1,9 +1,8 @@
     
 @extends('guest.layout')
 @section('content')
-    <title>Trang chủ</title>
 
-
+    <title>Trang chủ nè</title>
     <div id="slide" class="carousel slide" data-ride="carousel">
         <ul class="carousel-indicators">
             <li data-target="#slide" data-slide-to="0" class="active"></li>
@@ -39,7 +38,7 @@
     <div class="container padding">
         <div class="row">
             <div class="col-12 mt-5">
-                <h1 class="text-center text-white">THỰC ĐƠN</h1> 
+                <h1 class="text-center text-white">THỰC ĐƠN nè</h1> 
             </div>           
         </div>
         <div class="row padding">
@@ -170,4 +169,3 @@
 </div>
 
 @endsection     
-           

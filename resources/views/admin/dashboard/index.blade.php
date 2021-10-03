@@ -1,14 +1,19 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang chủ</title>
+    <title>Trang chủ ad</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <!-- <link type="text/css" rel="stylesheet" href="./main.css" /> -->
+    <link type="text/css" rel="stylesheet" href="./main.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=WindSong:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Carattere&display=swap" rel="stylesheet">
     <style>
 
         html, body {
@@ -16,6 +21,15 @@
             height: 100%;
             font-size: 18px;
             color: #222;
+        }
+
+        .logo-font {
+          font-family: 'WindSong', cursive;
+          margin: 6px 0px 0px 3px;
+        }
+
+        .font-text {
+            font-family: 'Carattere', cursive;
         }
 
         .color {
@@ -81,35 +95,64 @@
     </style>
 
 </head>
-<body>
-
+<body> -->
+<!-- 
+<div class="container-fluid p-0">
     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-        <a class="navbar-brand" href="#">VIVIET</a>
+        <a class="navbar-brand logo-font" href="#"><h2>ViViet</h2></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
       
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse" style="margin-left:300px" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Trang Chủ <span class="sr-only">(current)</span></a>
+              <a class="nav-link" style="font-size: 21px" href="/"><i class="fas fa-home mr-1"></i>Trang chủ</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Giới Thiệu</a>
+              <a class="nav-link" style="font-size: 21px" href="#">Khách hàng</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/menu">Thực Đơn</a>
+                <a class="nav-link" style="font-size: 21px" href="#">Nhân sự</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Khuyến Mãi</a>
+                <a class="nav-link" style="font-size: 21px" href="#">Thực đơn</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Đặt Bàn</a>
+                <a class="nav-link" style="font-size: 21px" href="#">Khu vực</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" style="font-size: 21px" href="#">Đặt Bàn</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" style="font-size: 21px" href="#">Quản lý kho</a>
+            </li>
+   
+            <li class="nav-item">
+                <a class="nav-link" style="font-size: 21px" href="#">Báo cáo</a>
+            </li>
+          </ul>
+          <div class="float-right">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-togglet" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-user"></i> Admin
+                </a>
+                <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Đăng xuất</a>
+                </div>
+            </li>
+            </ul>
+        </div>
         </div>
     </nav>
+</div> -->
+@extends('admin.layout')
+@section('content')
+
     
-    <div id="slide" class="carousel slide" data-ride="carousel">
+<div class="container-fluid p-0">
+<div id="slide" class="carousel slide" data-ride="carousel">
         <ul class="carousel-indicators">
             <li data-target="#slide" data-slide-to="0" class="active"></li>
             <li data-target="#slide" data-slide-to="1"></li>
@@ -117,11 +160,11 @@
             
         </ul>
         <div class="carousel-inner">
-            <div class="carousel-item active">
+            <div class="carousel-item active" >
                 <img class="img-wrap" src="image/bn3.png" alt="">
                 <div class="carousel-caption">
                     <h1 class="display-2">Vị Việt</h1>
-                    <h3>Yêu thương quay về - là bếp lửa lên</h3>
+                    <h2 class="font-text" style="font-size: 60px">Yêu thương quay về - là bếp lửa lên</h2>
                     <br>
                     @guest
                     <button type="button" class="btn btn-outline-light btn-lg bg-white"> <a href="/register" class="text-dark"> ĐĂNG KÝ</a></button>
@@ -138,6 +181,7 @@
 
         </div>
     </div>
+</div>
 
 
 <div class="bg-dark">
@@ -288,12 +332,8 @@
 </div>
 
        
-           
-
-
-
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 </body>
-</html>
+</html> -->
+@endsection  

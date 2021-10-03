@@ -47,12 +47,14 @@
             <div class="col-10">
                 <div class="row">
                     <div class="col-12 text-center mt-5">
-                        <h2>THÊM MỚI món ăn</h2>
+                        <h2>THÊM MỚI MÓN ĂN</h2>
                     </div>
                     <div class="col-8">
                     <div class="form-container ml-5 mt-5">
                     <h5>Nhập thông tin:</h5>                    
-                    <form action="{{ route('admin.dishes.update', $dish) }}" method="post">
+                    <form action="{{ route('admin.dishes.update', $dish) }}" method="post" enctype="multipart/form-data">
+                    <!-- <form action="{{ route('admin.dishes.update', $dish) }}" method="post"> -->
+
                         @csrf
                         @method('PATCH')                       
                         <div class="form-group row mt-4">
@@ -62,16 +64,21 @@
                             </div>
                         </div>
                         <div class="form-group row mt-4">
-                            <label for="image" class="col-sm-3 col-form-label form_label">Hình ảnh</label>                            
-                                <div class="form-group">
-                                    <input type="file" class="form-control-file" name="image" id="image">
-                                </div>                            
+                            <label for="image" class="col-sm-3 col-form-label form_label">Hình ảnh</label>
+                            <div class="form-group ml-3 mt-2">     
+                                <input type="file" class="form-control-file" name="image" id="image">
+                            </div>
                         </div>
-
+                        <div class="form-group row mt-4">
+                            <label for="price" class="col-sm-3 col-form-label form_label">Giá</label>
+                            <div class="col-sm-8">
+                            <input type="number" min="0" class="form-control" name="price" id="price">
+                            </div>
+                        </div>
                         <div class="form-group row mt-4">
                             <label for="description" class="col-sm-3 col-form-label form_label">Mô tả</label>
                             <div class="col-sm-8">
-                            <input type="text" class="form-control" name="description" id="description">
+                            <input type="text" class="form-control" name="description" id="description" value="{{ $dish->name }}">
                             </div>
                         </div>
                         <div class="form-group row float-right mr-5 mt-3" >
