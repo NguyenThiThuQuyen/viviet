@@ -153,10 +153,10 @@
                 <a class="nav-link mr-3" href="#">Khuyến mãi</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link mr-3" href="/menu">Thực đơn</a>
+                <a class="nav-link mr-3" href="/guest/menu">Thực đơn</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link mr-3" href="/booking">Đặt bàn</a>
+                <a class="nav-link mr-3" href="/guest/booking">Đặt bàn</a>
             </li>
         </ul>
 

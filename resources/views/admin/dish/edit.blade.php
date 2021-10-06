@@ -47,14 +47,22 @@
             <div class="col-10">
                 <div class="row">
                     <div class="col-12 text-center mt-5">
-                        <h2>THÊM MỚI MÓN ĂN</h2>
+                        <h2>SỬA MÓN ĂN</h2>
                     </div>
                     <div class="col-8">
                     <div class="form-container ml-5 mt-5">
                     <h5>Nhập thông tin:</h5>                    
-                    <form action="{{ route('admin.dishes.update', $dish) }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('admin.dishes.update',['dish' => $dish]) }}" method="post" enctype="multipart/form-data">
                     <!-- <form action="{{ route('admin.dishes.update', $dish) }}" method="post"> -->
-
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                         @csrf
                         @method('PATCH')                       
                         <div class="form-group row mt-4">
@@ -63,22 +71,23 @@
                             <input type="text" class="form-control" name="name" id="name" value="{{ $dish->name }}">
                             </div>
                         </div>
-                        <div class="form-group row mt-4">
+                        <!-- <div class="form-group row mt-4">
                             <label for="image" class="col-sm-3 col-form-label form_label">Hình ảnh</label>
-                            <div class="form-group ml-3 mt-2">     
-                                <input type="file" class="form-control-file" name="image" id="image">
+                            <div class="form-group ml-3 mt-2">  
+                                <input type="file" class="form-control-file" name="image" id="image" value="{{ $dish->image }}">
                             </div>
-                        </div>
+                        </div> -->
+
                         <div class="form-group row mt-4">
                             <label for="price" class="col-sm-3 col-form-label form_label">Giá</label>
                             <div class="col-sm-8">
-                            <input type="number" min="0" class="form-control" name="price" id="price">
+                            <input type="number" min="0" class="form-control" name="price" id="price" value="{{ $dish->currentPrice->price }}">
                             </div>
                         </div>
                         <div class="form-group row mt-4">
                             <label for="description" class="col-sm-3 col-form-label form_label">Mô tả</label>
                             <div class="col-sm-8">
-                            <input type="text" class="form-control" name="description" id="description" value="{{ $dish->name }}">
+                            <input type="text" class="form-control" name="description" id="description" value="{{ $dish->description }}">
                             </div>
                         </div>
                         <div class="form-group row float-right mr-5 mt-3" >

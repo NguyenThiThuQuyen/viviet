@@ -20,21 +20,18 @@ use App\Http\Controllers\Admin\DishController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
 // Route::get('/guest.homepage.index', function () {
 //     return view('guest.homepage.index');
 // })->middleware(['auth'])->name('guest.homepage.index');
 
-// Route::get('/guest.homepage.menu', function () {
-//     return view('guest.homepage.menu');
-// })->middleware(['auth'])->name('guest.homepage.menu');
 
 require __DIR__.'/auth.php';
 
@@ -66,12 +63,22 @@ require __DIR__.'/auth.php';
 
 */
 
+Route::get('/guest',[HomepageController::class, 'index']);
+
+Route::get('/index',[HomepageController::class, 'index']);
 
 
 //khachhang
-Route::get('/guest',[HomepageController::class, 'index']);
-Route::get('/menu',[HomepageController::class, 'menu']);
-Route::get('/booking',[HomepageController::class, 'booking']);
+Route::prefix('guest')->name('guest.')->group(function (){
+        Route::view('/','guest.homepage.index');
+
+        Route::get('/menu',[HomepageController::class, 'menu']);
+        // Route::get('/booking',[HomepageController::class, 'booking']);
+        // Route::resource('menu', HomepageController::class);
+
+
+});
+
 
 // nhanvien
 // Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function (){
@@ -91,7 +98,7 @@ Route::prefix('admin')->name('admin.')->group(function (){
         Route::resource('typeofdishes', TypeofdishController::class);
         Route::resource('dishes', DishController::class);
 
-})
+});
 
 
 ?>

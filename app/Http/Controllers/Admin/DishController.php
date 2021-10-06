@@ -38,22 +38,17 @@ class DishController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-       
-        
+    {      
         $data = $request->validate([
-  
             'name' => ['required', 'string'],
             'description' => ['required', 'string'],
-
 
             'image' => ['required', 'image'],
             'typeofdish_id' => ['required', 'exists:typeofdishes,id'],
             'price' => 'required|numeric|min:0'
 
         ]);
-      
-       
+             
         // $dish = new Dish();
         // $dish->name = $data['name'];
         // $dish->description = $data['description'];
@@ -62,9 +57,6 @@ class DishController extends Controller
         // $storedPath = $image->move('hinhanh', $image->getClientOriginalName());
         // $dish->image= $image->getClientOriginalName();
         // $dish->save();
-
-
-
 
         $data['image'] = $request->file('image')->store('public/dishes');
 
@@ -112,12 +104,13 @@ class DishController extends Controller
     {
         $data = $request->validate([
             
-            // 'name' => 'required|string', 
             'name' => ['required', 'string'],
-            'image' => ['required', 'string'],
+            // 'image' => ['required', 'string'],
             'description' => ['required', 'string'],
             'price' => 'required|numeric|min:0'
         ]);
+
+
         $dish->update($data);
 
         $dish->dishprices()->create([
@@ -136,7 +129,7 @@ class DishController extends Controller
      */
     public function destroy(Dish $dish)
     {
-        $dish->prices()->delete();
+        $dish->dishprices()->delete();
         $dish->delete();
         return redirect()->route('admin.dishes.index');
 
