@@ -5,7 +5,7 @@
         <title>Login</title>
         <meta charset="uft-8">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-        <link type="text/css" rel="stylesheet" href="./main.css" />
+        <!-- <link type="text/css" rel="stylesheet" href="./main.css" /> -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
         <style>
@@ -103,7 +103,7 @@
                                             <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
                                             <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
                                         </label>
-                                        <button type="submit" class="btn btn_item float-right mr-1"><a href="">Login</a></button>
+                                        <button type="submit" class="btn btn_item float-right mr-1"><a href="/">Login</a></button>
 
                                         <div class="flex items-center justify-end mt-4">
 

@@ -22,21 +22,7 @@
                             <tr>
                                 <td><i class="fas fa-atom mr-2"></i><a href="/admin/typeofdishes">Loại món ăn</a></td>
                             </tr>
-                            <tr>
-                                <td><i class="far fa-calendar-minus mr-2"></i>Nhập hàng</td>
-                            </tr>
-                            <tr>
-                                <td><i class="far fa-calendar-minus mr-2"></i>Xuất hàng</td>
-                            </tr>
-                            <tr>
-                                <td><i class="fas fa-hourglass-end mr-2"></i>Hàng tồn kho</td>
-                            </tr>
-                            <tr>
-                                <td><i class="fas fa-house-user mr-2"></i>Nhà cung cấp</td>
-                            </tr>
-                            <tr>
-                                <td><i class="fab fa-elementor mr-2"></i>Thống kê kho hàng</td>
-                            </tr>
+
                         </tbody>
                     </table>                                  
                 </div>  

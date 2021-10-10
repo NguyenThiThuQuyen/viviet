@@ -12,8 +12,8 @@ class Typeofdish extends Model
     public $timestamps = false;
     protected $fillable = ['name'];
 
-    public function dish()
+    public function dishes()
     {
-        return $this->hasMany(Dish::class);
+        return $this->hasMany(Dish::class, 'typeofdish_id');
     }
 }

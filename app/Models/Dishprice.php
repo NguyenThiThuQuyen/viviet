@@ -11,7 +11,7 @@ class Dishprice extends Model
 {
     use HasFactory;
     use SoftDeletes;
-    protected $fillable = ['dish_id','price', 'apply'];
+    protected $fillable = ['dish_id', 'area_id','price', 'apply'];
 
     protected $casts = [
         'apply' => 'datetime',

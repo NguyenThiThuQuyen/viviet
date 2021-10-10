@@ -14,22 +14,23 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Carattere&display=swap" rel="stylesheet">
+
 <style>
       html, body {
           width: 100%;
           height: 100%;
-          font-family: 'Arial';
-          font-size: 19px;
+          font-size: 20px;
+          /* font-family: 'Arial'; */
           color: #222;
-        }
-
-        .font-text {
-            font-family: 'Carattere', cursive;
         }
 
         .logo-font {
           font-family: 'WindSong', cursive;
           margin: 6px 0px 0px 3px;
+        }
+
+        .font-text {
+            font-family: 'Carattere', cursive;
         }
 
         .color {
@@ -98,6 +99,12 @@
             text-shadow: 2px 2px 10px #000;
         }
 
+        .btn {
+            text-decoration: none;
+            padding: 12px 26px;
+            font-size: 18px;
+        }
+
         .btn-light {
             background-color: rgb(214, 91, 47);
             border: 1px solid white;
@@ -129,56 +136,57 @@
 
 <div class="container-fluid p-0">
     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-        <a class="navbar-brand logo-font" href="#"><h2>ViViet</h2></a>
+        <a class="navbar-brand logo-font ml-5" href="#"><h2>ViViet</h2></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
       
         <div class="collapse navbar-collapse" style="margin-left:300px" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
+        <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="/admin/"><i class="fas fa-home mr-1"></i>Trang chủ</a>
+              <a class="nav-link mr-3" href="/"><i class="fas fa-home mr-1"></i>Trang chủ</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Khách hàng</a>
+              <a class="nav-link mr-3" href="#gioithieu">Giới thiệu</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Nhân sự</a>
+                <a class="nav-link mr-3" href="#">Khuyến mãi</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('admin.dishes.index') }}">Thực đơn</a>
+            <a class="nav-link mr-3" role="button" href="/menu">Thực đơn</a>
+             <!-- <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Thực đơn
+                  </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown" class="bg-dark">
+                    @if(isset($typeofdishes))
+                    @foreach($typeofdishes as $typeofdish)
+                    <a class="dropdown-item text-white" href="{{ route('guest.menu.typeofdish', ['typeofdish' => $typeofdish]) }}">{{ $typeofdish->name }}</a>
+                    @endforeach
+                    @endif
+                </div> -->
             </li>
+
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('admin.areas.index') }}">Khu vực</a>
+                <a class="nav-link mr-3" href="/booking">Đặt bàn</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Đặt Bàn</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('admin.materials.index') }}">Quản lý kho</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Báo cáo</a>
-            </li>
-          </ul>
-          <div class="float-right">
-            <ul class="navbar-nav">
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-togglet" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-user"></i> Admin
-                </a>
-                <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">Đăng xuất</a>
-                </div>
-            </li>
-            </ul>
-        </div>
+        </ul>
+
         </div>
     </nav>
 </div>
 
 
 @yield('content')
+
+<div class="container-fluid p-0">
+    <div class="nav bg-dark" style="justify-content: space-evenly;">
+        <ul class="nav-list">
+            <li class="nav-item text-center text-white mt-3" style="list-style: none;">Hotline: 079.268.268</li>
+            <li class="nav-item text-center text-white" style="list-style: none;">Website: viviet.com</li>
+            <li class="nav-item text-center text-white" style="list-style: none;">Địa chỉ: Số 12, Hai Bà Trưng, Quận 1, TP Hồ Chí Minh</li>
+        </ul>
+    </div>
+</div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 </body>

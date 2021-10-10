@@ -76,8 +76,7 @@
                             @foreach($typeofdishes as $typeofdish)
                         <li class="d-inline mr-4 ">
                             <button type="button" class="btn btn-outline-dark btn-lg btn-light mt-4">
-                                <a href="{{ route('guest.menu.typeofdish', ['typeofdish' => $typeofdishes]) }}" class="text-white" style="text-decoration: none;">{{ $typeofdish->name }}</a>
-                                <!-- <a class="dropdown-item" href="{{ route('guest.menu.type', ['type' => $type_product]) }}">{{ $type_product->name}}</a> -->
+                                <a href="{{ route('guest.menuKhaivi.typeofdish', ['typeofdish' => $typeofdish]) }}" class="text-white" style="text-decoration: none;">{{ $typeofdish->name }}</a>
                             </button>
                         </li>
                             @endforeach
@@ -103,7 +102,7 @@
                         <img class="img-wrap card-img-top" src="{{ Storage::url($dish->image) }}" alt="">                       
                         <div class="card-body p-3">                          
                             <h5 class="card-text text-center">{{ $dish->name }}</h5>
-                            <p class="card-text text-center">{{ $dish->currentprice->price }} VND</p>
+                            <p class="card-text text-center">{{ $dish->price }}</p>
                         </div>
                     </div>
                 </div>

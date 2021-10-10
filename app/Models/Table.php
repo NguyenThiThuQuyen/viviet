@@ -15,7 +15,7 @@ class Table extends Model
         return $this->belongsTo(Area::class);
     }
 
-    public function tableprices(){
-        return $this->hasMany(Tableprice::class);
+    public function orderitems(){
+        return $this->hasMany(Orderitem::class);
     }
 }

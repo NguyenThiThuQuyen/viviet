@@ -17,9 +17,8 @@ class CreateOrderitemsTable extends Migration
             $table->id();
             $table->foreignId('order_id');
             $table->foreignId('dishprice_id');
-            $table->foreignId('tableprice_id');
-            $table->unsignedInteger('quatity_dish');
-            $table->unsignedInteger('quatity_table');
+            $table->foreignId('table_id');
+            $table->unsignedInteger('quatity');
             $table->timestamps();
         });
     }

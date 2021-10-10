@@ -18,6 +18,7 @@ class CreateDishpricesTable extends Migration
             $table->unsignedInteger('price');
             $table->date('apply');
             $table->foreignId('dish_id');
+            $table->foreignId('area_id');
             $table->timestamps();
         });
     }
