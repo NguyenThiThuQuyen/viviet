@@ -146,10 +146,10 @@
                 <a class="nav-link" href="#">Nhân sự</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('admin.dishes.index') }}">Thực đơn</a>
+                <a class="nav-link" href="{{ route('admin.dishes.index') }}">Món ăn</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('admin.areas.index') }}">Khu vực</a>
+                <a class="nav-link" href="{{ route('admin.tables.index') }}">Bàn ăn</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Đặt Bàn</a>

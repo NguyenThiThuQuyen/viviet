@@ -2,7 +2,7 @@
 @extends('admin.layout')
 
 @section('content')
-<title>Thêm mới khu vực</title>
+<title>Thêm mới bàn ăn</title>
     
 
  
@@ -33,25 +33,35 @@
             <div class="col-10">
                 <div class="row">
                     <div class="col-12 text-center mt-5">
-                        <h2>Thêm Mới Khu Vực</h2>
+                        <h2>THÊM MỚI BÀN ĂN</h2>
                     </div>
                     <div class="col-8">
                     <div class="form-container ml-5 mt-5">
                     <h5>Nhập thông tin:</h5>
-                    <form action="{{ route('admin.areas.store') }}" method="post">
+                    <form action="{{ route('admin.tables.store') }}" method="post">
                         @csrf
-                        <!-- <div class="form-group row mt-5">
-                            <label for="manv" class="col-sm-2 col-form-label form_label">Mã loại</label>
-                            <div class="col-sm-9">
-                            <input type="text" class="form-control" name="manv" id="manv">
-                            </div>
-                        </div> -->
+                        @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
                         <div class="form-group row mt-4">
-                            <label for="name" class="col-sm-3 col-form-label form_label">Tên khu vực</label>
+                            <label for="number" class="col-sm-3 col-form-label form_label">STT bàn ăn</label>
                             <div class="col-sm-8">
-                            <input type="text" class="form-control" name="name" id="name">
+                            <input type="text" class="form-control" name="number" id="number">
                             </div>
                         </div>
+                        <div class="form-group row mt-4">
+                            <label for="seat" class="col-sm-3 col-form-label form_label">Số chỗ</label>
+                            <div class="col-sm-8">
+                            <input type="text" class="form-control" name="seat" id="seat">
+                            </div>
+                        </div>
+
                         <div class="form-group row float-right mr-5 mt-3" >
                             <div class="form-group form-check">
                             <button type="submit" class="btn btn_item">Lưu</button>

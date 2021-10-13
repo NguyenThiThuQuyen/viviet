@@ -6,7 +6,7 @@
     
 
     <div class="container-fluid p-0">
-        <div class="row">
+        <div class="row mr-0">
             <div class="col-2">         
                 <div class="card-body">
                     <div class="card" style="height:680px">
@@ -46,8 +46,9 @@
             <div class="col-10">
                 <div class="row">
                     <div class="col-12 text-center mt-5">
-                        <h2>SỬA LOẠI NGUYÊN LIỆU</h2>
+                        <h2>Sửa Loại Nguyên Liệu</h2>
                     </div>
+                    <div class="col-1"></div>
                     <div class="col-8">
                     <div class="form-container ml-5 mt-5">
                     <h5>Nhập thông tin:</h5>

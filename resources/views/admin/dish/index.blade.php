@@ -5,7 +5,7 @@
 
 
 <div class="container-fluid p-0">
-        <div class="row">
+        <div class="row mr-0">
             <div class="col-2">         
                 <div class="card-body">
                     <div class="card" style="height:680px">
@@ -17,7 +17,7 @@
                         </thead>
                         <tbody class="bg-light">
                             <tr>
-                                <td><i class="fas fa-atom mr-2"></i>Món ăn</td>
+                                <td><i class="fas fa-atom mr-2"></i><a href="">Món ăn</a></td>
                             </tr>
                             <tr>
                                 <td><i class="fas fa-atom mr-2"></i><a href="/admin/typeofdishes">Loại món ăn</a></td>
@@ -34,12 +34,14 @@
                         <div class="form-group form-check float-right">
                             <a href="/admin/dishes/create" class="mr-4 text-dark"><i class="fas fa-plus"></i> Thêm mới</a>
                             <a href="" class="mr-3 text-dark"><i class="fas fa-download"></i> Xuất excel</a>
+                            
                         </div>
-                        <h2 class="text-center mt-5">DANH SÁCH MÓN ĂN</h2>
+                        <h2 class="text-center mt-5">Cập Nhật Món Ăn</h2>
                     </div>
-                    <div class="col-12 mt-4">
+                    <div class="col-12 mt-3">
 
                         <div class="container">
+                        <button class=" btn btn_item mb-2 float-right"><a class="text-white" href="/admin/dishes/show">Xem danh sách</a></button>
                         <table class="table table-bordered table-striped text-center">
                         <thead>
                             <tr>
@@ -62,20 +64,19 @@
                                 <td>{{ $dish->name }}</td>
                                 <td>{{ $dish->typeofdish->name??'error'}}</td>
                                 <td>                            
-                                    <img src="{{ Storage::url($dish->image) }}" alt=""  height="100" weight="80">
+                                    <img src="{{ Storage::url($dish->image) }}" alt=""  height="90" weight="85">
                                     <!-- <img src="{{ asset('public/hinhanh/'.$dish->image) }}" height="100" weight="80"> -->
                                 </td>
                                 <td>{{ $dish->currentprice->price }}</td>
                                 <!-- <td>{{"gia"}}</td> -->
                                 <td>{{ $dish->description }}</td>
-                                <td>
-                                    <a href="{{ route('admin.dishes.show', $dish ) }}"><i class="fas fa-eye mr-5"></i></a>
-                                    <a href="{{ route('admin.dishes.edit', $dish ) }}"><i class="fas fa-pen mr-4"></i></a>
 
+                                <td>
+                                    <a href="{{ route('admin.dishes.edit', $dish ) }}" title="sửa"><i class="fas fa-pen mr-1"></i></a>
                                     <form action="{{ route('admin.dishes.destroy', $dish) }}" method="post" class="d-inline">
                                         @csrf
                                         @method('DELETE')
-                                        <button href="" type="submit" class="btn btn-white"><i class="fas fa-trash-alt"></i></button>
+                                        <button href="" type="submit" class="btn btn-white" title="xóa"><i class="fas fa-trash-alt"></i></button>
                                     </form>
                                 </td>
                             </tr>
@@ -91,4 +92,6 @@
   </div>
 
 @endsection
+
+
 

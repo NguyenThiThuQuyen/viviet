@@ -7,7 +7,7 @@
 
  
     <div class="container-fluid p-0">
-        <div class="row">
+        <div class="row mr-0">
             <div class="col-2">         
                 <div class="card-body">
                     <div class="card" style="height:680px">

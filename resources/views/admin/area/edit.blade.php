@@ -32,7 +32,7 @@
             <div class="col-10">
                 <div class="row">
                     <div class="col-12 text-center mt-5">
-                        <h2>SỬA KHU VỰC</h2>
+                        <h2>Sửa Khu Vực</h2>
                     </div>
                     <div class="col-8">
                     <div class="form-container ml-5 mt-5">

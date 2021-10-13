@@ -75,10 +75,11 @@ class DishController extends Controller
      * @param  \App\Models\Dish  $dish
      * @return \Illuminate\Http\Response
      */
-    public function show(Dish $dish)
+
+    public function show()
     {
-        return view('admin.dishes.index', compact('dishes'));
-        
+        $dishes = Dish::all();
+        return view('admin.dish.show', compact('dishes'));
     }
 
     /**
@@ -89,8 +90,7 @@ class DishController extends Controller
      */
     public function edit(Dish $dish)
     {
-        return view('admin.dish.edit', compact('dish'));
-        
+        return view('admin.dish.edit', compact('dish')); 
     }
 
     /**
@@ -110,14 +110,11 @@ class DishController extends Controller
             'price' => 'required|numeric|min:0'
         ]);
 
-
         $dish->update($data);
-
         $dish->dishprices()->create([
             'apply' => now(),
             'price' => $request->price
         ]);
-
         return redirect()->route('admin.dishes.index');
     }
 

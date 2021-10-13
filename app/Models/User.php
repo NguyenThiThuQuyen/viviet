@@ -55,4 +55,5 @@ class User extends Authenticatable
     public function soldOrders(){
         return $this->hasMany(Order::class, 'staff_id');
     }
+
 }

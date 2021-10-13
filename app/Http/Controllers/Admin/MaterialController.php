@@ -57,9 +57,11 @@ class MaterialController extends Controller
      * @param  \App\Models\Material  $material
      * @return \Illuminate\Http\Response
      */
-    public function show(Material $material)
+    public function show()
     {
-        //
+        $materials = Material::all();
+        return view('admin.material.show', compact('materials'));
+
     }
 
     /**

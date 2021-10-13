@@ -2,7 +2,7 @@
 @extends('admin.layout')
 
 @section('content')
-<title>Khu vực</title>
+<title>Bàn ăn</title>
 
 
 <div class="container-fluid p-0">
@@ -33,10 +33,9 @@
                 <div class="row">
                     <div class="col-12 mt-3">
                         <div class="form-group form-check float-right">
-                            <a href="/admin/areas/create" class="mr-4 text-dark"><i class="fas fa-plus"></i> Thêm mới</a>
                             <a href="" class="mr-3 text-dark"><i class="fas fa-download"></i> Xuất excel</a>
                         </div>
-                        <h2 class="text-center mt-5">Cập Nhật Khu Vực</h2>
+                        <h2 class="text-center mt-5">Danh Sách Bàn Ăn</h2>
                     </div>
                     <div class="col-12 mt-4">
 
@@ -45,29 +44,20 @@
                         <thead>
                             <tr>
                               <!-- <th scope="col">STT</th> -->
-                              <th scope="col">Mã khu vực</th>
-                              <th scope="col">Tên khu vực</th>
-                              <th scope="col">Điều chỉnh</th>
-                            
+                              <th scope="col">Mã bàn</th>
+                              <th scope="col">STT bàn</th>
+                              <th scope="col">Số chỗ</th>
                             </tr>
                         </thead>
                         <tbody>
-                        @if(isset($areas))
-                        @foreach($areas as $area)
+                        @if(isset($tables))
+                        @foreach($tables as $table)
                             <tr>
                               <!-- <th scope="row">1</th> -->
-                              <td>{{ $area->id }}</td>
-                              <td>{{ $area->name }}</td>
-                            
-                              <td>
-                                <a href="{{ route('admin.areas.show', $area ) }}" title="Xem"><i class="fas fa-eye mr-3"></i></a>
-                                <a href="{{ route('admin.areas.edit', $area ) }}" title="Sửa"><i class="fas fa-pen mr-4"></i></a>
-                                <form action="{{ route('admin.areas.destroy', $area) }}" method="post" class="d-inline">
-                                  @csrf
-                                  @method('DELETE')
-                                  <button href="" type="submit" class="btn btn-white" title="Xóa"><i class="fas fa-trash-alt"></i></button>
-                                </form>
-                              </td>
+                                <td>{{ $table->id }}</td>
+                                <td>{{ $table->number }}</td>
+                                <td>{{ $table->seat }}</td>
+                             
                             </tr>
                         @endforeach
                         @endif
@@ -83,3 +73,10 @@
   </div>
 
 @endsection
+
+
+
+
+
+
+

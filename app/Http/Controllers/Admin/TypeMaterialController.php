@@ -52,9 +52,11 @@ class TypeMaterialController extends Controller
      * @param  \App\Models\Typematerial  $typematerial
      * @return \Illuminate\Http\Response
      */
-    public function show(Typematerial $typematerial)
+    public function show()
     {
-        //
+       
+        $typematerials = Typematerial::all();
+        return view('admin.typematerial.show', compact('typematerials'));
     }
 
     /**

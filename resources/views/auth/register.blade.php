@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,26 +14,22 @@
     * {
             box-sizing: border-box;
         }
-
         html, body {
             margin: 0;
             padding: 0;
             font-size: 14px;
             font-family: Arial, Helvetica, sans-serif;
         }
-
        body {
             background-image: url(image/5.jpg);
             backdrop-filter: blur(3px);
         }
-
         .font-color {
             color: rgb(214, 91, 47);
             font-size: 48px;
             font-weight: bold;
         
         }
-
         .form-container {
             max-width: 600px;
             min-height: 700px;
@@ -44,25 +38,20 @@
             background-color: #ffff;
             font-weight: 545;
         }
-
         .btn {
             text-decoration: none;
             padding: 10px 42px;
             margin: 15px 25px;
             font-size: 20px;
         }
-
         .btn_item {
             background-color: rgb(214, 91, 47);
             color: #fff;
         }
-
         .color {
             /* margin-top: 100px; */
             color: rgb(214, 91, 47);
         }
-
-
     </style>
 </head>
 <body>
@@ -92,19 +81,13 @@
                             <input type="password" class="form-control" name="password_confirmation" id="password_confirmation"  required/>
                                     <br />
                             <div class="form-group form-check">
-                               <button type="submit" class="btn btn_item float-right"><a href="/login">Submit</a></button>
+                               <!-- <button type="submit" class="btn btn_item float-right"><a href="">Submit</a></button> -->
+                                <x-button class="btn btn_item float-right">
+                                            {{ __('Register') }}
+                                </x-button>
                             </div>
-                            <!-- <div class="card-body" style="margin-left:1%">
-                            @if ($errors->any())
-                            <div class="alert-danger bg-white text-danger">
-                                <ul style="list-style:none;">
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif
-                    </div>    -->
+
+                    </div>   
                             <div class="text-center" style="margin-top: 100px;">
                                 <h6>Already registered? <a href="/login" class="color">Log in</a></h6>
 
@@ -127,4 +110,3 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 </body>
 </html>
-

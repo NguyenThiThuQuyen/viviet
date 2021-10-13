@@ -5,7 +5,7 @@
 
  
     <div class="container-fluid p-0">
-        <div class="row">
+        <div class="row mr-0">
             <div class="col-2">         
                 <div class="card-body">
                     <div class="card" style="height:680px">
@@ -17,7 +17,7 @@
                         </thead>
                         <tbody class="bg-light">
                             <tr>
-                                <td><i class="fas fa-atom mr-2"></i>Món ăn</td>
+                                <td><i class="fas fa-atom mr-2"></i><a href="/admin/dishes">Món ăn</a></td>
                             </tr>
                             <tr>
                                 <td><i class="fas fa-atom mr-2"></i><a href="/admin/typeofdishes">Loại món ăn</a></td>
@@ -30,9 +30,10 @@
             </div>
             <div class="col-10">
                 <div class="row">
-                    <div class="col-12 text-center mt-5">
-                        <h2>THÊM MỚI MÓN ĂN</h2>
+                    <div class="col-12 text-center mt-4">
+                        <h2>Thêm Mới Món Ăn</h2>
                     </div>
+                    <div class="col-1"></div>
                     <div class="col-8">
                     <div class="form-container ml-5 mt-3">
                     <h5>Nhập thông tin:</h5>
