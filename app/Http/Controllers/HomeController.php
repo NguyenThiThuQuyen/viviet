@@ -27,7 +27,7 @@ class HomeController extends Controller
         $dishes = Dish::all();      
         return view('menu', compact('typeofdishes','dishes'));
     }
-    
+
 
     public function booking()
     {

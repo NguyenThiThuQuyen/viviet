@@ -2,7 +2,7 @@
 @extends('layout')
 @section('content')
     <title>Thực Đơn</title>
- 
+
     <style>
     
         .text-color {
@@ -115,7 +115,7 @@
             </div>
 
 
-                <div class="container mt-5" style="border-bottom: 2px solid #222; width:40%;"></div>
+            <div class="container mt-5" style="border-bottom: 2px solid #222; width:40%;"></div>
 
             <div class="row">
                 <div class="col-12 mt-3">

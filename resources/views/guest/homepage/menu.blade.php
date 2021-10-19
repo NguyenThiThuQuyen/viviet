@@ -59,8 +59,8 @@
 
         <div class="container-fluid">
             <div class="row">
-                <div class="col-12 mt-5">
-                    <h1 class="text-center">Thực Đơn Nhà Hàng</h1>
+                <div class="col-12 mt-4">
+                    <h2 class="text-center">Thực Đơn Nhà Hàng</h2>
                 </div>
             </div>
         </div>
@@ -76,8 +76,7 @@
                             @foreach($typeofdishes as $typeofdish)
                         <li class="d-inline mr-4 ">
                             <button type="button" class="btn btn-outline-dark btn-lg btn-light mt-4">
-                                <a href="{{ route('guest.menu.typeofdish', ['typeofdish' => $typeofdishes]) }}" class="text-white" style="text-decoration: none;">{{ $typeofdish->name }}</a>
-                                <!-- <a class="dropdown-item" href="{{ route('guest.menu.type', ['type' => $type_product]) }}">{{ $type_product->name}}</a> -->
+                                <a href="{{ route('guest.menu.typeofdish', ['typeofdish' => $typeofdish]) }}" class="text-white" style="text-decoration: none;">{{ $typeofdish->name }}</a>
                             </button>
                         </li>
                             @endforeach
@@ -93,23 +92,28 @@
 
     </div>
 
-
         <div class="container">
+
             <div class="row padding">
                 @if(isset($dishes))
                 @foreach ($dishes as $dish)
-                <div class="col-md-4 mt-5">
+                <div class="col-md-4 mt-4">
                     <div class="card">                       
                         <img class="img-wrap card-img-top" src="{{ Storage::url($dish->image) }}" alt="">                       
                         <div class="card-body p-3">                          
                             <h5 class="card-text text-center">{{ $dish->name }}</h5>
-                            <p class="card-text text-center">{{ $dish->currentprice->price }} VND</p>
+                            <p class="card-text text-center">{{ $dish->currentprice->price }} VND
+                                <a href="{{ route('guest.add-to-cart', ['dish_id' => $dish->id]) }}" class="text-dark">
+                                    <i class="fas fa-shopping-cart fa-1x ml-3"></i>
+                                </a>
+                            </p>
                         </div>
                     </div>
                 </div>
                 @endforeach
                 @endif
             </div>
+
 
                 <div class="container mt-5" style="border-bottom: 2px solid #222; width:40%;"></div>
 
@@ -119,7 +123,7 @@
                 </div>
             <div class="mx-auto">
                 <button type="button" class="btn btn-light1 btn-lg mt-3 mb-5"><a href="" class="text-white"> ĐẶT NGAY</a></button>
-            </div>           
+            </div>        
         </div>
 
 

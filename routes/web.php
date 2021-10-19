@@ -7,8 +7,9 @@ use App\Http\Controllers\Admin\MaterialController;
 use App\Http\Controllers\Admin\TypeMaterialController;
 use App\Http\Controllers\Admin\TypeofdishController;
 use App\Http\Controllers\Admin\DishController;
-use App\Http\Controllers\Admin\AreaController;
 use App\Http\Controllers\Admin\TableController;
+
+
 use App\Http\Controllers\Guest\CartController;
 
 
@@ -40,11 +41,21 @@ Route::get('/guest.homepage.index', function () {
 require __DIR__.'/auth.php';
 
 Route::get('/',[HomeController::class, 'index']);
+
 Route::get('/menu/{typeofdish}',[HomeController::class, 'menu'])->name('guest.menu.typeofdish');
 Route::get('/menu',[HomeController::class, 'menu_typeall']);
+
 Route::get('/booking',[HomeController::class, 'booking']);
-Route::get('/card',[CartController::class, 'add'])->name('guest.cart.show');
-Route::get('/add-to-card',[CartController::class, 'add'])->name('guest.add-to-cart');
+
+Route::get('/cart', [CartController::class, 'show'])->name('guest.cart.show');
+Route::get('/add-to-cart', [CartController::class, 'add'])->name('guest.add-to-cart');
+Route::get('/delete-from-cart', [CartController::class, 'delete'])->name('guest.delete-from-cart');
+Route::get('/cart-increase', [CartController::class, 'increase'])->name('guest.cart.increase');
+Route::get('/cart-decrease', [CartController::class, 'decrease'])->name('guest.cart.decrease');
+
+
+
+
 
 
 

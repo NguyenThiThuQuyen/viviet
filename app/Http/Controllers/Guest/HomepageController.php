@@ -25,33 +25,6 @@ class HomepageController extends Controller
         return view('guest.homepage.menu', compact('typeofdishes','dishes'));
     }
 
-    public function menuBestseller(){
-        return view('guest.homepage.menuBestseller');
-    }
-
-    public function menuMonmoi(){
-        return view('guest.homepage.menuMonmoi');
-    }
-
-    public function menuMonchinh(){
-        return view('guest.homepage.menuMonchinh');
-    }
-
-    public function menuKhaivi(){
-        return view('guest.homepage.menuKhaivi');
-    }
-
-    public function menuTrangmieng(){
-        return view('guest.homepage.menuTrangmeng');
-    }
-
-    public function menuDouong(){
-        return view('guest.homepage.menuDouong');
-    }
-
-    public function menuRuou(){
-        return view('guest.homepage.menuRuou');
-    }
     
     public function booking()
     {
