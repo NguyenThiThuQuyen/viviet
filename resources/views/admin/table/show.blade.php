@@ -1,34 +1,8 @@
-
+@extends('admin.table.layout')
 @extends('admin.layout')
-
+    <title>Xem thông tin bàn ăn</title>
 @section('content')
-<title>Bàn ăn</title>
-
-
-<div class="container-fluid p-0">
-        <div class="row">
-            <div class="col-2">         
-                <div class="card-body">
-                    <div class="card" style="height:680px">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                            <th scope="col" class="bg-secondary text-white"><h5>Danh mục</h5></th>
-                            </tr>
-                        </thead>
-                        <tbody class="bg-light">
-                            <tr>
-                                <td><i class="fas fa-atom mr-2"></i><a href="/admin/areas">Khu vực</a></td>
-                            </tr>
-                            <tr>
-                                <td><i class="fas fa-atom mr-2"></i><a href="/admin/tables">Bàn ăn</a></td>
-                            </tr>
-
-                        </tbody>
-                    </table>                                  
-                </div>  
-                </div>                               
-            </div>
+@section('sidebar')
             <div class="col-10">
                 <div class="row">
                     <div class="col-12 mt-3">
@@ -43,7 +17,6 @@
                         <table class="table table-bordered table-striped text-center">
                         <thead>
                             <tr>
-                              <!-- <th scope="col">STT</th> -->
                               <th scope="col">Mã bàn</th>
                               <th scope="col">STT bàn</th>
                               <th scope="col">Số chỗ</th>
@@ -53,7 +26,6 @@
                         @if(isset($tables))
                         @foreach($tables as $table)
                             <tr>
-                              <!-- <th scope="row">1</th> -->
                                 <td>{{ $table->id }}</td>
                                 <td>{{ $table->number }}</td>
                                 <td>{{ $table->seat }}</td>
@@ -63,15 +35,12 @@
                         @endif
                         </tbody>
                         </table>
-                      </div>
-
-              
+                      </div>             
                     </div>
                 </div>
             </div>
         </div>
   </div>
-
 @endsection
 
 

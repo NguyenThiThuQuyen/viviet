@@ -117,7 +117,12 @@
             height: 100%;
             width: auto;
         }
+
+        .row {  
+            margin-right: 0px;
+        }
         
+
 
 
 </style>
@@ -139,25 +144,22 @@
             <li class="nav-item active">
               <a class="nav-link" href="/admin/"><i class="fas fa-home mr-1"></i>Trang chủ</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item mx-2">
               <a class="nav-link" href="#">Khách hàng</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item mx-2">
                 <a class="nav-link" href="#">Nhân sự</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item mx-2">
                 <a class="nav-link" href="{{ route('admin.dishes.index') }}">Món ăn</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('admin.tables.index') }}">Bàn ăn</a>
+            <li class="nav-item mx-2">
+                <a class="nav-link" href="{{ route('admin.tables.index') }}">Quản lý bàn</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Đặt Bàn</a>
-            </li>
-            <li class="nav-item">
+            <li class="nav-item mx-2">
                 <a class="nav-link" href="{{ route('admin.materials.index') }}">Quản lý kho</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item mx-2">
                 <a class="nav-link" href="#">Báo cáo</a>
             </li>
           </ul>

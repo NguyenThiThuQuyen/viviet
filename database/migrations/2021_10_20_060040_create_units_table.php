@@ -4,22 +4,22 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDishesTable extends Migration
+class CreateUnitsTable extends Migration
 {
     /**
      * Run the migrations.
-     *s
+     *
      * @return void
      */
     public function up()
     {
-        Schema::create('dishes', function (Blueprint $table) {
+        Schema::create('units', function (Blueprint $table) {
             $table->id();
             // $table->timestamps();
-            $table->string('name');
-            $table->string('image');
-            $table->string('description');
-            $table->foreignId('typeofdish_id');
+            $table->string('unit');
+            
+
+
         });
     }
 
@@ -30,6 +30,6 @@ class CreateDishesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('dishes');
+        Schema::dropIfExists('units');
     }
 }

@@ -7,8 +7,7 @@
         <ul class="carousel-indicators">
             <li data-target="#slide" data-slide-to="0" class="active"></li>
             <li data-target="#slide" data-slide-to="1"></li>
-            <li data-target="#slide" data-slide-to="2"></li>
-            
+            <li data-target="#slide" data-slide-to="2"></li>       
         </ul>
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -38,7 +37,7 @@
     <div class="container padding">
         <div class="row">
             <div class="col-12 mt-5">
-                <h1 class="text-center text-white">THỰC ĐƠN nè</h1> 
+                <h1 class="text-center text-white">THỰC ĐƠN</h1> 
             </div>           
         </div>
         <div class="row padding">

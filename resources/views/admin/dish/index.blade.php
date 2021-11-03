@@ -51,7 +51,7 @@
                               <th scope="col">Tên loại</th>
                               <th scope="col">Hình ảnh</th>
                               <th scope="col">Giá</th>
-                              <th scope="col">Mô tả</th>
+                              <!-- <th scope="col">Mô tả</th> -->
                               <th scope="col">Điều chỉnh</th>                            
                             </tr>
                         </thead>
@@ -68,11 +68,11 @@
                                     <!-- <img src="{{ asset('public/hinhanh/'.$dish->image) }}" height="100" weight="80"> -->
                                 </td>
                                 <td>{{ $dish->currentprice->price }}</td>
-                                <!-- <td>{{"gia"}}</td> -->
-                                <td>{{ $dish->description }}</td>
+                                <!-- <td>{{ $dish->description }}</td> -->
 
                                 <td>
-                                    <a href="{{ route('admin.dishes.edit', $dish ) }}" title="sửa"><i class="fas fa-pen mr-1"></i></a>
+                                    <a href="{{ route('admin.dishes.show', $dish ) }}" title="xem"><i class="far fa-eye"></i></a>
+                                    <a href="{{ route('admin.dishes.edit', $dish ) }}" title="sửa"><i class="fas fa-pen ml-3"></i></a>
                                     <form action="{{ route('admin.dishes.destroy', $dish) }}" method="post" class="d-inline">
                                         @csrf
                                         @method('DELETE')

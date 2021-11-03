@@ -26,4 +26,14 @@ class Order extends Model
     public function staff(){
         return $this->belongsTo(User::class, 'staff_id');
     }
+
+    //cú pháp tên hàm get<ten_thuoc_tinh>Attribute
+    public function getSubTotalAttribute(){
+        $subtotal = 0;
+        //$this là bản thân đơn hàng sẽ ktra các orderitems và cộng lại
+        foreach($this->orderitems as $item){
+            $subtotal += ($item->dishprice->price * $item->quatity);
+        }
+        return $subtotal;
+    }
 }

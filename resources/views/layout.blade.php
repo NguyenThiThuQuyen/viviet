@@ -153,22 +153,21 @@
                 <a class="nav-link mr-3" href="#">Khuyến mãi</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link mr-3" role="button" href="/menu">Thực đơn</a>
-             <!-- <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Thực đơn
-                  </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown" class="bg-dark">
-                    @if(isset($typeofdishes))
-                    @foreach($typeofdishes as $typeofdish)
-                    <a class="dropdown-item text-white" href="{{ route('guest.menu.typeofdish', ['typeofdish' => $typeofdish]) }}">{{ $typeofdish->name }}</a>
-                    @endforeach
-                    @endif
-                </div> -->
+                <a class="nav-link mr-3" role="button" href="/menu">Thực đơn</a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link mr-3" href="/booking">Đặt bàn</a>
             </li>
+
+            <li class="nav-item ml-5">
+                <a class="btn" href="{{ route('guest.cart.show') }}">
+                <i class="fas fa-shopping-cart"></i>
+                    Giỏ hàng
+                    <span class="badge bg-dark text-white ms-1 rounded-pill">{{ Cart::count() }}</span>
+                </a>
+            </li>
+           
         </ul>
 
         </div>

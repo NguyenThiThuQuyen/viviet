@@ -158,6 +158,14 @@
             <li class="nav-item">
                 <a class="nav-link mr-3" href="/guest/booking">Đặt bàn</a>
             </li>
+            <li class="nav-item ml-5">
+                <a class="btn text-dark" href="{{ route('guest.cart.show') }}">
+                <i class="fas fa-shopping-cart"></i>
+                    Giỏ hàng
+                    <span class="badge bg-dark text-white ms-1 rounded-pill">{{ Cart::count() }}</span>
+                </a>
+            </li>
+            
         </ul>
 
         </div>

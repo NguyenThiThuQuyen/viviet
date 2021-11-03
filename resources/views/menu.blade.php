@@ -95,6 +95,7 @@
         <div class="container">
 
             <div class="row padding">
+
                 @if(isset($dishes))
                 @foreach ($dishes as $dish)
                 <div class="col-md-4 mt-4">

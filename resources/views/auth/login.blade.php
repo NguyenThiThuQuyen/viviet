@@ -105,7 +105,7 @@
                                         </label>
                                         <!-- <button type="submit" class="btn btn_item float-right mr-1"><a href="">Login</a></button> -->
                                         <x-button class="btn btn_item float-right mr-1">
-                                            {{ __('Log in') }}
+                                            {{ __('Log in') }}                      
                                         </x-button>
 
                                         <div class="flex items-center justify-end mt-4">

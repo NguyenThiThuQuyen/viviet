@@ -1,37 +1,17 @@
-
+@extends('admin.table.layout')
 @extends('admin.layout')
 
+  <title>Sửa thông tin bàn ăn</title>
+
 @section('content')
-<title>Sửa thông tin bàn ăn</title>
-    
-
-    <div class="container-fluid p-0">
-        <div class="row">
-            <div class="col-2">         
-                <div class="card-body">
-                    <div class="card" style="height:680px">
-                    <table class="table">
-                    <thead>
-                            <tr>
-                            <th scope="col" class="bg-secondary text-white"><h5>Danh mục</h5></th>
-                            </tr>
-                        </thead>
-                        <tbody class="bg-light">
-                            <tr>
-                                <td><i class="fas fa-atom mr-2"></i><a href="/admin/tables">Bàn ăn</a></td>
-                            </tr>
-
-                        </tbody>
-                    </table>                                  
-                </div>  
-                </div>                               
-            </div>
-            <div class="col-10">
+@section('sidebar')
+            <div class="col-1"></div>
+            <div class="col-9">
                 <div class="row">
                     <div class="col-12 text-center mt-5">
-                        <h2>Sửa Thông Tin Bàn Ăn</h2>
+                        <h3>SỬA THÔNG TIN BÀN ĂN</h3>
                     </div>
-                    <div class="col-8">
+                    <div class="col-10">
                     <div class="form-container ml-5 mt-5">
                     <h5>Nhập thông tin:</h5>
                    

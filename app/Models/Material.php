@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Material extends Model
 {
+    use HasFactory;
     public $timestamps = false;
     protected $fillable = ['name', 'typematerial_id'];
 
@@ -14,6 +15,11 @@ class Material extends Model
     {
         return $this->belongsTo(Typematerial::class, 'typematerial_id');
     }
-    use HasFactory;
+
+    public function importprices()
+    {
+        return $this->hasMany(ImportPrice::class, 'importprice_id');
+    }
+    
 }
 
