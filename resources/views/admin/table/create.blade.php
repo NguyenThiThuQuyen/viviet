@@ -1,4 +1,4 @@
-@extends('admin.table.layout')
+@extends('admin.tablelayout')
 @extends('admin.layout')
 
   <title>Thêm mới bàn ăn</title>

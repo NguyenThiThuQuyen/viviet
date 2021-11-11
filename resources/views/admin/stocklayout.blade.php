@@ -17,6 +17,9 @@
                                 <td><i class="fas fa-atom mr-2"></i><a href="/admin/typematerials">Loại nguyên liệu</a></td>
                             </tr>
                             <tr>
+                                <td><i class="fas fa-atom mr-2"></i><a href="/admin/units">Đơn vị</a></td>
+                            </tr>
+                            <tr>
                                 <td><i class="far fa-calendar-minus mr-2"></i>Nhập hàng</td>
                             </tr>
                             <tr>

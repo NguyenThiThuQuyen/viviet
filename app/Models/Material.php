@@ -20,6 +20,12 @@ class Material extends Model
     {
         return $this->hasMany(ImportPrice::class, 'importprice_id');
     }
+
+
+    public function currentprice()
+    {
+        return $this->hasOne(ImportPrice::class)->latestOfMany();
+    }
     
 }
 

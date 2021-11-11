@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\MaterialController;
 use App\Http\Controllers\Admin\TypeMaterialController;
 use App\Http\Controllers\Admin\TypeofdishController;
 use App\Http\Controllers\Admin\DishController;
+use App\Http\Controllers\Admin\UnitController;
 use App\Http\Controllers\Admin\TableController;
 use App\Http\Controllers\Admin\SupplierController;
 use App\Http\Controllers\Admin\OrderController as AdminOrderController;
@@ -67,7 +68,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function (){
         Route::get('/',[DashboardController::class, 'index']);
 
         //xác nhận đơn hàng
-        Route::get('orders', [AdminOrderController::class, 'index'])->name('orders.index');
+        Route::resource('orders', AdminOrderController::class)->only(['index', 'show']);
         Route::get('orders/{order}/confirm', [AdminOrderController::class, 'confirm'])->name('orders.confirm');
 
 //danh sách thêm sửa xóa
@@ -83,5 +84,10 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function (){
         Route::resource('tables', TableController::class);
         //nha cung cap
         Route::resource('suppliers', SupplierController::class);
+
+        //dom vi tinh
+        Route::resource('units', UnitController::class);
+
+
 });
 ?>

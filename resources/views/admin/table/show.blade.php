@@ -1,4 +1,4 @@
-@extends('admin.table.layout')
+@extends('admin.tablelayout')
 @extends('admin.layout')
     <title>Xem thông tin bàn ăn</title>
 @section('content')

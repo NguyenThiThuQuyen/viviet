@@ -45,9 +45,14 @@ class MaterialController extends Controller
             // 'name' => 'required|string', 
             'name' => ['required', 'string'], //dạng mảng
             'typematerial_id' => ['required', 'exists:typematerials,id'],
+            'price' => 'required|numeric|min:0'
         ]);
 
-        Material::create($data);
+        $material = Material::create($data);
+        $material->importprices()->create([
+            'apply' => now(),
+            'price' => $request->price
+        ]);
         return redirect()->route('admin.materials.index');
     }
 
@@ -88,9 +93,14 @@ class MaterialController extends Controller
             //dạng chuỗi
             // 'name' => 'required|string', 
             'name' => ['required', 'string'], //dạng mảng
+            'price' => 'required|numeric|min:0'
 
         ]);
         $material->update($data);
+        $material->importprices()->create([
+            'apply' => now(),
+            'price' => $request->price
+        ]);
         return redirect()->route('admin.materials.index');
     }
 
@@ -105,6 +115,7 @@ class MaterialController extends Controller
      */
     public function destroy(Material $material)
     {
+        $material->importprices()->delete();
         $material->delete();
         return redirect()->route('admin.materials.index');
     }

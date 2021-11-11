@@ -11,7 +11,7 @@
                         </thead>
                         <tbody class="bg-light">
                             <tr>
-                                <td><i class="fas fa-blender-phone mr-2"></i><a href="/admin/booking">Đặt bàn</a></td>
+                                <td><i class="fas fa-blender-phone mr-2"></i><a href="/admin/orders">Đặt bàn</a></td>
                             </tr>
                             <tr>
                                 <td><i class="fas fa-atom mr-2"></i><a href="/admin/tables">Bàn ăn</a></td>

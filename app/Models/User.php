@@ -7,11 +7,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
-
+    use HasRoles;
     //là khi giá trị mặc định (CUSTOMER) được tạo bên table_users sẽ có giá trị là 'customer' bên đây
     public const ADMIN = 'admin';
     public const CUSTOMER = 'customer';
