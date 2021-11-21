@@ -3,9 +3,8 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use App\Models\User;
 
-class CreateRoleInUsersTable extends Migration
+class CreateSoftDeleteInImportpricesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,10 +13,8 @@ class CreateRoleInUsersTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            //kiểu hằng số, sẽ khai báo bên User model
-            $table->string('role')->default(User::CUSTOMER);
-           
+        Schema::table('import_prices', function (Blueprint $table) {
+            $table->softDeletes();
         });
     }
 
@@ -28,8 +25,8 @@ class CreateRoleInUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('role');
+        Schema::table('import_prices', function (Blueprint $table) {
+            $table->dropColumn('deleted_at');
         });
     }
 }

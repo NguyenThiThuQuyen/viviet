@@ -16,10 +16,10 @@
                     <h1 class="display-2">Vị Việt</h1>
                     <h2 class="font-text" style="font-size: 60px">Yêu thương quay về - là bếp lửa lên</h2>
                     <br>
-                    @auth
+                    <!-- @auth
                     <button type="button" class="btn btn-outline-light btn-lg bg-white"> <a href="/register" class="text-dark"> ĐĂNG KÝ</a></button>
-                    <button type="button" class="btn btn-light btn-lg"> <a href="/login" class="text-white"> ĐĂNG NHẬP</a></button>
-                    @endauth
+                    <button type="button" class="btn btn-light btn-lg"> <a href="/login" class="text-white py-2"> ĐĂNG NHẬP</a></button>
+                    @endauth -->
                 </div>
             </div>
             <div class="carousel-item">

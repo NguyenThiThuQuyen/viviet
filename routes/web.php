@@ -15,6 +15,7 @@ use App\Http\Controllers\Guest\CartController;
 use App\Http\Controllers\Guest\PaymentController;
 use App\Http\Controllers\Guest\OrderController;
 use App\Http\Controllers\Guest\User;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------

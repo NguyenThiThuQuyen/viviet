@@ -65,7 +65,7 @@ class DishController extends Controller
             'apply' => now(),
             'price' => $request->price
         ]);
-
+        
         return redirect()->route('admin.dishes.index');
     }
 

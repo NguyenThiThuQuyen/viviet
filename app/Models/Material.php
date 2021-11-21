@@ -4,12 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Material extends Model
 {
     use HasFactory;
+    use SoftDeletes;
     public $timestamps = false;
     protected $fillable = ['name', 'typematerial_id'];
+    protected $primary ='id';
+    protected $table ='materials';
 
     public function typematerial()
     {
@@ -18,7 +22,7 @@ class Material extends Model
 
     public function importprices()
     {
-        return $this->hasMany(ImportPrice::class, 'importprice_id');
+        return $this->hasMany(ImportPrice::class);
     }
 
 

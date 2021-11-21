@@ -21,7 +21,13 @@
                             <div class="col-sm-8">
                             <input type="text" class="form-control" name="name" id="name" value="{{ $material->name }}">
                             </div>
-                        </div>                       
+                        </div>
+                        <div class="form-group row mt-4">
+                            <label for="price" class="col-sm-3 col-form-label form_label">Giá</label>
+                            <div class="col-sm-8">
+                            <input type="number" min="0" class="form-control" name="price" id="price" value="{{ $material->currentPrice->price }}">
+                            </div>
+                        </div>               
                         <div class="form-group row float-right mr-5 mt-3" >
                             <div class="form-group form-check">
                             <button type="submit" class="btn btn_item mr-2">Lưu</button>

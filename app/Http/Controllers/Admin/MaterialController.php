@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Material;
 use App\Models\Typematerial;
-
 use Illuminate\Http\Request;
 
 class MaterialController extends Controller
@@ -45,7 +44,8 @@ class MaterialController extends Controller
             // 'name' => 'required|string', 
             'name' => ['required', 'string'], //dạng mảng
             'typematerial_id' => ['required', 'exists:typematerials,id'],
-            'price' => 'required|numeric|min:0'
+            // 'price' => 'required|numeric|min:0'
+            'price' => ['required', 'exists:typematerials,id']
         ]);
 
         $material = Material::create($data);

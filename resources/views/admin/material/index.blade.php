@@ -37,9 +37,9 @@
                               <!-- <th scope="row">1</th> -->
                               <td>{{ $material->id }}</td>
                               <td>{{ $material->name }}</td>
-                              <!-- <td>{{ $material->typematerial['name']}}</td> -->
                               <td>{{ $material->typematerial->name??'error'}}</td>
-                              <td>{{ $material->currentprice->price }}</td>
+                              <!-- <td>{{ $material->currentprice['price'] }}</td> -->
+                              <td>{{ $material->currentprice->price??'error'}}</td> 
                               <td>
                                 <a href="{{ route('admin.materials.edit', $material ) }}"><i class="fas fa-pen mr-4"></i></a>
                                 <form action="{{ route('admin.materials.destroy', $material) }}" method="post" class="d-inline">

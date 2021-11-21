@@ -38,7 +38,7 @@
     <div class="container padding">
         <div class="row">
             <div class="col-12 mt-5">
-                <h1 class="text-center text-white">THỰC ĐƠN nè</h1> 
+                <h1 class="text-center text-white">THỰC ĐƠN</h1> 
             </div>           
         </div>
         <div class="row padding">

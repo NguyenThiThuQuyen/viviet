@@ -16,7 +16,7 @@
                     <div class="col-12 mt-4">
 
                       <div class="container">
-                      <table class="table table-bordered table-striped text-center">
+                      <table class="table table-breceipted table-striped text-center">
                         <thead>
                             <tr>
                               <th scope="col">Mã hóa đơn</th>
@@ -27,21 +27,21 @@
                             </tr>
                         </thead>
                         <tbody>
-                        @if(isset($orders))
-                        @foreach($orders as $order)
+                        @if(isset($receipts))
+                        @foreach($receipts as $receipt)
                             <tr>
-                                <td>{{ $order->id }}</td>
-                                <td>{{ $order->customer->name }}</td>
-                                <td>{{ $order->staff->name ?? 'Chưa có' }}</td>
-                                <td>{{ $order->subtotal}}</td>
+                                <td>{{ $receipt->id }}</td>
+                                <td>{{ $receipt->staff->name ?? 'Chưa có' }}</td>
+                                <td>{{ $receipt->supplier->name ?? 'Chưa có' }}</td>
+                                <td>{{ $receipt->subtotal}}</td>
                                 <td>
                                     
                                     <button class=" btn btn-secondary mx-3 px-2 float-left">
-                                        <a class="text-white" href="{{ route('admin.orders.show', $order ) }}">Xem</a>
+                                        <a class="text-white" href="{{ route('admin.receipts.show', $receipt ) }}">Xem</a>
                                     </button>
-                                    @if($order->staff == null)
+                                    @if($receipt->staff == null)
                                     <button class=" btn btn-success  px-2 float-left">
-                                        <a class="text-white" href="{{ route('admin.orders.confirm', $order ) }}">Xác nhận</a>
+                                        <a class="text-white" href="{{ route('admin.receipts.confirm', $receipt ) }}">Xác nhận</a>
                                     </button>
                                     @endif
                                    
