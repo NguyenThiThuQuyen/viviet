@@ -93,9 +93,9 @@
     </div>
 
         <div class="container">
-
+            <div class="text-center"><h3><i>Menu theo loại</i></h3></div>
             <div class="row padding">
-
+            
                 @if(isset($dishes))
                 @foreach ($dishes as $dish)
                 <div class="col-md-4 mt-4">

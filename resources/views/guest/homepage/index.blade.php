@@ -45,7 +45,7 @@
                 <div class="card">
                     <img class="card-img-top" src="image/38.jpg" alt="">
                     <div class="card-body p-3">
-                        <h4 class="card-text text-center">Best Seller</h4>
+                        <h4 class="card-text text-center"><a href="/menu" class="text-white">Best Seller</a></h4>
                     </div>
                 </div>
             </div>

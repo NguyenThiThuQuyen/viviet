@@ -19,7 +19,7 @@
                         </thead>
                         <tbody class="bg-light">
                             <tr>
-                                <td><i class="fas fa-atom mr-2"></i>Món ăn</td>
+                                <td><i class="fas fa-atom mr-2"></i><a href="/admin/dishes">Món ăn</a></td>
                             </tr>
                             <tr>
                                 <td><i class="fas fa-atom mr-2"></i><a href="/admin/typeofdishes">Loại món ăn</a></td>
@@ -57,12 +57,14 @@
                             <input type="text" class="form-control" name="name" id="name" value="{{ $dish->name }}">
                             </div>
                         </div>
-                        <!-- <div class="form-group row mt-4">
+                        <div class="form-group row mt-4">
                             <label for="image" class="col-sm-3 col-form-label form_label">Hình ảnh</label>
-                            <div class="form-group ml-3 mt-2">  
-                                <input type="file" class="form-control-file" name="image" id="image" value="{{ $dish->image }}">
+                            <div class="form-group ml-3 mt-2">
+                               <input type="file" class="form-control-file" name="image" id="image"  value="{{ $dish->image }}">
+                               <img src="{{ Storage::url($dish->image) }}" alt=""  height="90" weight="85">
+                               
                             </div>
-                        </div> -->
+                        </div>
 
                         <div class="form-group row mt-4">
                             <label for="price" class="col-sm-3 col-form-label form_label">Giá</label>
@@ -78,10 +80,10 @@
                         </div>
                         <div class="form-group row float-right mr-5 mt-3" >
                             <div class="form-group form-check">
-                            <button type="submit" class="btn btn_item">Lưu</button>
-                            <button type="submit" class="btn border border-dark text-dark bg-light"><a href="#"></a>Hủy</button>                    
+                            <button type="submit" class="btn btn_item mr-2">Lưu</button>
+                            <button type="submit" class="btn border border-dark text-dark bg-light mr-4"><a href="#"></a>Hủy</button>                    
         
-                            </div> 
+                        </div> 
                         </div>
                     </form>   
                 </div>

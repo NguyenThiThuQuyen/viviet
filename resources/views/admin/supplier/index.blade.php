@@ -20,7 +20,7 @@
                         <thead>
                             <tr>
                               <!-- <th scope="col">STT</th> -->
-                              <th scope="col">Mã nhà cung cấp</th>
+                              <!-- <th scope="col">Mã nhà cung cấp</th> -->
                               <th scope="col">Tên nhà cung cấp</th>
                               <th scope="col">Địa chỉ</th>
                               <th scope="col">Số điện thoại</th>
@@ -32,7 +32,7 @@
                         @foreach($suppliers as $supplier)
                             <tr>
                               <!-- <th scope="row">1</th> -->
-                              <td>{{ $supplier->id }}</td>
+                              <!-- <td>{{ $supplier->id }}</td> -->
                               <td>{{ $supplier->name }}</td>
                               <td>{{ $supplier->address }}</td>
                               <td>{{ $supplier->phonenumber }}</td>

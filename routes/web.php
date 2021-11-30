@@ -70,6 +70,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function (){
 
         //xác nhận đơn hàng
         Route::resource('orders', AdminOrderController::class)->only(['index', 'show']);
+      
         Route::get('orders/{order}/confirm', [AdminOrderController::class, 'confirm'])->name('orders.confirm');
 
 //danh sách thêm sửa xóa
@@ -79,6 +80,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function (){
         //mon an
         Route::resource('typeofdishes', TypeofdishController::class);
         Route::resource('dishes', DishController::class);
+        
         //khu vuc
         Route::resource('areas', AreaController::class);
         //ban

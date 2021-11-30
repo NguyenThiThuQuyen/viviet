@@ -31,6 +31,7 @@
                 <div class="row">
                     <div class="col-12 mt-3">
                         <div class="form-group form-check float-right">
+                          
                             <a href="/admin/typeofdishes/create" class="mr-4 text-dark"><i class="fas fa-plus"></i> Thêm mới</a>
                             <a href="" class="mr-3 text-dark"><i class="fas fa-download"></i> Xuất excel</a>
                         </div>
@@ -59,6 +60,7 @@
                               <td>{{ $typeofdish->id }}</td>
                               <td>{{ $typeofdish->name }}</td>
                               <td>
+                              <a href="{{ route('admin.typeofdishes.show',$typeofdish ) }}" title="xem"><i class="far fa-eye"></i></a>
                                 <a href="{{ route('admin.typeofdishes.edit', $typeofdish ) }}"><i class="fas fa-pen mr-5"></i></a>
 
                                 <form action="{{ route('admin.typeofdishes.destroy', $typeofdish) }}" method="post" class="d-inline">

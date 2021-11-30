@@ -103,7 +103,7 @@
                                             <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
                                             <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
                                         </label>
-                                        <!-- <button type="submit" class="btn btn_item float-right mr-1"><a href="">Login</a></button> -->
+                                       
                                         <x-button class="btn btn_item float-right mr-1">
                                             {{ __('Log in') }}                      
                                         </x-button>
@@ -124,7 +124,7 @@
                             </div>
 
                             <div class="text-center">
-                                <p>Thank you<i class="fas fa-heart color"></i>Created with viviet.com</p>
+                                <p>Thank you <i class="fas fa-heart color"></i> Created with viviet.com</p>
                             </div>
                         </div>
 

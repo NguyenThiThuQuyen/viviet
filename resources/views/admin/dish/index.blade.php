@@ -17,7 +17,7 @@
                         </thead>
                         <tbody class="bg-light">
                             <tr>
-                                <td><i class="fas fa-atom mr-2"></i><a href="">Món ăn</a></td>
+                                <td><i class="fas fa-atom mr-2"></i><a href="/admin/dishes">Món ăn</a></td>
                             </tr>
                             <tr>
                                 <td><i class="fas fa-atom mr-2"></i><a href="/admin/typeofdishes">Loại món ăn</a></td>
@@ -58,7 +58,7 @@
                         @if(isset($dishes))
                         @foreach($dishes as $dish)
                             <tr>
-                              <!-- <th scope="row">1</th> -->
+                              <!-- <th scope="row"></th> -->
                                 <td>{{ $dish->id }}</td>
                                 <td>{{ $dish->name }}</td>
                                 <td>{{ $dish->typeofdish->name??'error'}}</td>
@@ -68,6 +68,7 @@
                                 </td>
                                 <td>{{ $dish->currentprice->price }}</td>
                                 <td>
+                         
                                     <a href="{{ route('admin.dishes.show', $dish ) }}" title="xem"><i class="far fa-eye"></i></a>
                                     <a href="{{ route('admin.dishes.edit', $dish ) }}" title="sửa"><i class="fas fa-pen ml-3"></i></a>
                                     <form action="{{ route('admin.dishes.destroy', $dish) }}" method="post" class="d-inline">

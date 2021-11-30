@@ -17,7 +17,7 @@
                         </thead>
                         <tbody class="bg-light">
                             <tr>
-                                <td><i class="fas fa-atom mr-2"></i><a href="">Món ăn</a></td>
+                                <td><i class="fas fa-atom mr-2"></i><a href="/admin/dishes">Món ăn</a></td>
                             </tr>
                             <tr>
                                 <td><i class="fas fa-atom mr-2"></i><a href="/admin/typeofdishes">Loại món ăn</a></td>
@@ -39,6 +39,7 @@
                     <div class="col-12 mt-5">
 
                         <div class="container">
+                       
                         <table class="table table-bordered table-striped text-center">
                         <thead>
                             <tr>

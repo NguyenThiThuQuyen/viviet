@@ -36,6 +36,7 @@
                                 <td>{{ $order->subtotal}}</td>
                                 <td>
                                     
+                             
                                     <button class=" btn btn-secondary mx-3 px-2 float-left">
                                         <a class="text-white" href="{{ route('admin.orders.show', $order ) }}">Xem</a>
                                     </button>

@@ -52,10 +52,18 @@ class TypeofdishController extends Controller
      * @param  \App\Models\Typeofdish  $typeofdish
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    // public function show()
+    // {
+    //     $typeofdishes = Typeofdish::all();
+    //     return view('admin.typeofdish.show', compact('typeofdishes'));
+    // }
+
+    public function show($id)
     {
-        $typeofdishes = Typeofdish::all();
-        return view('admin.typeofdish.show', compact('typeofdishes'));
+        return view('admin.typeofdish.show', [
+            'typeofdish' =>Typeofdish::findOrFail($id)
+            
+        ]);
     }
 
     /**

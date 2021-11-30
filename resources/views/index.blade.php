@@ -41,12 +41,13 @@
                 <h1 class="text-center text-white">THỰC ĐƠN</h1> 
             </div>           
         </div>
+      
         <div class="row padding">
             <div class="col-md-6 mt-5">
                 <div class="card">
                     <img class="card-img-top" src="image/38.jpg" alt="">
                     <div class="card-body p-3">
-                        <h4 class="card-text text-center">Best Seller</h4>
+                        <h4 class="card-text text-center"><a href="/menu">Best Seller</a></h4>
                     </div>
                 </div>
             </div>
@@ -54,7 +55,7 @@
                 <div class="card">
                     <img class="card-img-top" src="image/36.jpg" alt="">
                     <div class="card-body p-3">
-                        <h4 class="card-text text-center">Món Mới</h4>
+                        <h4 class="card-text text-center"><a href="/menu">Món mới</a></h4>
                     </div>
                 </div>
             </div>
@@ -65,7 +66,7 @@
                 <div class="card">
                     <img class="card-img-top" src="image/39.jpeg" alt="">
                     <div class="card-body p-3">
-                        <h4 class="card-text text-center">Khai Vị</h4>
+                        <h4 class="card-text text-center"><a href="/menu">Khai Vị</a></h4>
                     </div>
                 </div>
             </div>
@@ -73,7 +74,7 @@
                 <div class="card">
                     <img class="card-img-top" src="image/25.jpg" alt="">
                     <div class="card-body p-3">
-                        <h4 class="card-text text-center">Món Chính</h4>
+                        <h4 class="card-text text-center"><a href="/menu">Món Chính</a></h4>
                     </div>
                 </div>
             </div>
@@ -81,7 +82,7 @@
                 <div class="card">
                     <img class="card-img-top" src="image/30.jpeg" alt="">
                     <div class="card-body p-3">
-                        <h4 class="card-text text-center">Tráng Miệng</h4>
+                        <h4 class="card-text text-center"><a href="/menu">Tráng Miệng</a></h4>
                     </div>
                 </div>
             </div>
@@ -93,7 +94,7 @@
                 <div class="card">
                     <img class="card-img-top" src="image/46.jpeg" alt="">
                     <div class="card-body p-3">
-                        <h4 class="card-text text-center">Đồ Uống</h4>
+                        <h4 class="card-text text-center"><a href="/menu">Đồ uống</a></h4>
                     </div>
                 </div>
             </div>
@@ -101,12 +102,12 @@
                 <div class="card">
                     <img class="card-img-top" src="image/44.jpeg" alt="">
                     <div class="card-body p-3">
-                        <h4 class="card-text text-center">Rượu</h4>
+                        <h4 class="card-text text-center"><a href="/menu">Rượu</a></h4>
                     </div>
                 </div>
             </div>
         </div>
-
+    
 
     </div>
 </div>

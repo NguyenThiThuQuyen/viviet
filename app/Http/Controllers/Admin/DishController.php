@@ -42,7 +42,6 @@ class DishController extends Controller
         $data = $request->validate([
             'name' => ['required', 'string'],
             'description' => ['required', 'string'],
-
             'image' => ['required', 'image'],
             'typeofdish_id' => ['required', 'exists:typeofdishes,id'],
             'price' => 'required|numeric|min:0'
@@ -76,11 +75,23 @@ class DishController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function show()
+
+
+
+    // public function show($id)
+    // {
+    //     return view('admin.dish.show', [
+    //         'dish' =>Dish::findOrFail($id)
+            
+    //     ]);
+    // }
+
+    public function show(Dish $dish)
     {
-        $dishes = Dish::all();
-        return view('admin.dish.show', compact('dishes'));
+        return view('admin.dish.show', compact('dish')); 
     }
+
+
 
     /**
      * Show the form for editing the specified resource.
@@ -109,7 +120,7 @@ class DishController extends Controller
             'description' => ['required', 'string'],
             'price' => 'required|numeric|min:0'
         ]);
-
+        $data['image'] = $request->file('image')->store('public/dishes');
         $dish->update($data);
         $dish->dishprices()->create([
             'apply' => now(),
