@@ -20,17 +20,15 @@
                               <th scope="col">Tên loại</th>                            
                             </tr>
                         </thead>
-                        <tbody>
-                        @if(isset($typematerials))
-                        @foreach($typematerials as $typematerial)
+                        <tbody>                     
                             <tr>
                               <td>{{ $typematerial->id }}</td>
                               <td>{{ $typematerial->name }}</td>                             
-                            </tr>
-                            @endforeach
-                          @endif
+                            </tr>                         
                           </tbody>
                         </table>
+                        <button class=" btn btn_item mb-2"><a class="text-white" href="/admin/typematerials/">Trở về</a></button>
+
                       </div>              
                     </div>
                 </div>

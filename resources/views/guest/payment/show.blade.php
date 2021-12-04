@@ -8,13 +8,19 @@
            @csrf
         <h4 class="text-center mt-1"><i>Thông tin khách hàng</i></h4>
 
-            <div class="form-group row mt-4 ml-3">
+            <div class="form-group row mt-3 ml-3">
             <label for="name" class="col-sm-3 col-form-label form_label">Họ Tên</label>
                 <div class="col-sm-11">                          
                     <input type="text" class="form-control" name="name" id="name">                               
                 </div>
             </div>
-            <div class="form-group row mt-3 ml-3 mb-5">
+            <div class="form-group row mt-3 ml-3 mb-3">
+            <label for="phonenumber" class="col-sm-3 col-form-label form_label">Số điện thoại</label>
+                <div class="col-sm-11">
+                    <input type="text" class="form-control" name="phonenumber" id="phonenumber">                              
+                </div>
+            </div>
+            <div class="form-group row ml-3 mb-5">
             <label for="email" class="col-sm-3 col-form-label form_label">Email</label>
                 <div class="col-sm-11">
                     <input type="email" class="form-control" name="email" id="email">                              

@@ -51,7 +51,7 @@
                         <div class="form-group row float-right mr-5 mt-3">
                             <div class="form-group form-check">
                             <button type="submit" class="btn btn_item mr-2">Lưu</button>
-                            <button type="submit" class="btn border border-dark text-dark bg-light mr-3"><a href="#"></a>Hủy</button>                    
+                            <button type="" class="btn border border-dark text-dark bg-light mr-3"><a href="{{ route('admin.typeofdishes.edit', $typeofdish ) }}"></a>Hủy</button>                    
         
                             </div> 
                         </div>

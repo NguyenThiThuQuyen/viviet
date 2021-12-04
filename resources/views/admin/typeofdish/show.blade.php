@@ -33,7 +33,7 @@
                         <div class="form-group form-check float-right">
                             <a href="" class="mr-3 text-dark"><i class="fas fa-download"></i> Xuất excel</a>
                         </div>
-                        <h2 class="text-center mt-5">Danh Sách Loại Món Ăn</h2>
+                        <h2 class="text-center mt-5">XEM LOẠI MÓN ĂN</h2>
                     </div>
                     <div class="col-12 mt-4">
 
@@ -47,17 +47,16 @@
                             </tr>
                           </thead>
                           <tbody>
-                        @if(isset($typeofdishes))
-                        @foreach($typeofdishes as $typeofdish)
+                      
                             <tr>
                               <!-- <th scope="row">1</th> -->
                               <td>{{ $typeofdish->id }}</td>
                               <td>{{ $typeofdish->name }}</td>
                             </tr>
-                            @endforeach
-                          @endif
+                         
                           </tbody>
                         </table>
+                        <button class=" btn btn_item mb-2"><a class="text-white" href="/admin/typeofdishes/">Trở về</a></button>
                       </div>           
                     </div>
                 </div>

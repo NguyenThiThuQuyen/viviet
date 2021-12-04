@@ -23,18 +23,17 @@
                             </tr>
                         </thead>
                         <tbody>
-                        @if(isset($tables))
-                        @foreach($tables as $table)
+          
                             <tr>
                                 <td>{{ $table->id }}</td>
                                 <td>{{ $table->number }}</td>
                                 <td>{{ $table->seat }}</td>
                              
                             </tr>
-                        @endforeach
-                        @endif
+                       
                         </tbody>
                         </table>
+                        <button class=" btn btn_item mb-2"><a class="text-white" href="/admin/tables/">Trở về</a></button>
                       </div>             
                     </div>
                 </div>

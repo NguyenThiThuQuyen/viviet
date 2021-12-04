@@ -21,6 +21,7 @@ class PaymentController extends Controller
         ['email' => $request->email],
         [
             'name' => $request->name,
+            'phonenumber' => $request->phonenumber,
             'password' => ''
         ]
       );

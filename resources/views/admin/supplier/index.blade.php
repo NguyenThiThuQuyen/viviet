@@ -15,7 +15,6 @@
                     <div class="col-12 mt-4">
 
                       <div class="container">
-                        <button class=" btn btn_item mb-2 float-right"><a class="text-white" href="/admin/suppliers/show">Xem danh sách</a></button>
                         <table class="table table-bordered table-striped text-center">
                         <thead>
                             <tr>

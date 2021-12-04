@@ -125,8 +125,6 @@
             width: auto;
         }
         
-
-
 </style>
 
 
@@ -141,31 +139,48 @@
           <span class="navbar-toggler-icon"></span>
         </button>
       
-        <div class="collapse navbar-collapse" style="margin-left:300px" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
+        <div class="collapse navbar-collapse" style="margin-left:250px" id="navbarSupportedContent">
+        <ul class="navbar-nav">
             <li class="nav-item active">
-              <a class="nav-link mr-3" href="/"><i class="fas fa-home mr-1"></i>Trang chủ</a>
+              <a class="nav-link " href="/"><i class="fas fa-home"></i>Trang chủ</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link " href="#gioithieu">Giới thiệu</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link mr-3" href="#gioithieu">Giới thiệu</a>
+                <a class="nav-link" href="#">Khuyến mãi</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link mr-3" href="#">Khuyến mãi</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link mr-3" role="button" href="/menu">Thực đơn</a>
+            <li class="nav-item mx-2">
+                <a class="nav-link " role="button" href="/menu">Thực đơn</a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link mr-3" href="/booking">Đặt bàn</a>
+                <a class="nav-link" href="/booking">Đặt bàn</a>
             </li>
 
-            <li class="nav-item ml-5">
+            <li class="nav-item">
                 <a class="btn" href="{{ route('guest.cart.show') }}">
                 <i class="fas fa-shopping-cart"></i>
                     Giỏ hàng
                     <span class="badge bg-dark text-white ms-1 rounded-pill">{{ Cart::count() }}</span>
                 </a>
+            </li>
+            <li class="nav-item">
+                <div>
+                @if(Auth::check())
+              <!-- <div class="col-md-1 col-sm-1"></div> -->
+              <div class="col-md-1 col-sm-1">
+                <div class="btn-group">
+                  <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-user" style="font-size:23px"></i> {{Auth::user()->name}}
+                  </button>
+                  <div class="dropdown-menu bg-dark">
+                    <a class="dropdown-item text-white" stype="width: 40px" href="/dangxuat">Đăng xuất</a>
+                  </div>
+                </div>
+              </div>
+              @endif
+                </div> 
             </li>
            
         </ul>

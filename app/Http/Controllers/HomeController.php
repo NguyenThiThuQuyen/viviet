@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Typeofdish;
 use App\Models\Dish;
 use Illuminate\Http\Request;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -28,10 +29,20 @@ class HomeController extends Controller
         return view('menu', compact('typeofdishes','dishes'));
     }
 
+    public function timkiem(Request $request){
+        $dishes = Dish::where('name','like','%'.$request->tukhoa.'%')->get();
+        return view('search', compact('dishes'));
+    }
+
 
     public function booking()
     {
         return view('booking');
+    }
+
+    public function dangxuat(){
+        Auth::logout();
+        return redirect('/');
     }
 
     public function redirect(Request $request)

@@ -20,8 +20,7 @@
                 <td><img src="{{ Storage::url($item->dishprice->dish->image) }}" alt=""  height="90" weight="85"></td>
                 <td>{{ $item->dishprice->price }}</td>
                 <td>{{ $item->quatity }}</td>
-                <td>{{ $item->dishprice->price * $item->quatity }}</td>
-                
+                <td>{{ $item->dishprice->price * $item->quatity }}</td>                
             </tr>
         @endforeach
         </tbody>

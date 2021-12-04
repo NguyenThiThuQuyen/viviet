@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
 use App\Http\Controllers\Controller;
 use App\Models\Dish;
 use App\Models\Typeofdish;
@@ -45,7 +44,6 @@ class DishController extends Controller
             'image' => ['required', 'image'],
             'typeofdish_id' => ['required', 'exists:typeofdishes,id'],
             'price' => 'required|numeric|min:0'
-
         ]);
              
         // $dish = new Dish();
@@ -76,21 +74,12 @@ class DishController extends Controller
      */
 
 
-
-
-    // public function show($id)
-    // {
-    //     return view('admin.dish.show', [
-    //         'dish' =>Dish::findOrFail($id)
-            
-    //     ]);
-    // }
-
-    public function show(Dish $dish)
+    public function show($id)
     {
-        return view('admin.dish.show', compact('dish')); 
+        return view('admin.dish.show', [
+            'dish' =>Dish::findOrFail($id)           
+        ]);
     }
-
 
 
     /**
@@ -101,7 +90,8 @@ class DishController extends Controller
      */
     public function edit(Dish $dish)
     {
-        return view('admin.dish.edit', compact('dish')); 
+        $typeofdishes = Typeofdish::all();
+        return view('admin.dish.edit', compact('dish', 'typeofdishes')); 
     }
 
     /**
@@ -116,8 +106,9 @@ class DishController extends Controller
         $data = $request->validate([
             
             'name' => ['required', 'string'],
-            // 'image' => ['required', 'string'],
             'description' => ['required', 'string'],
+            'image' => ['required', 'image'],
+            'typeofdish_id' => ['required', 'exists:typeofdishes,id'],
             'price' => 'required|numeric|min:0'
         ]);
         $data['image'] = $request->file('image')->store('public/dishes');

@@ -47,6 +47,7 @@ Route::get('/',[HomeController::class, 'index']);
 Route::get('/menu/{typeofdish}',[HomeController::class, 'menu'])->name('guest.menu.typeofdish');
 Route::get('/menu',[HomeController::class, 'menu_typeall']);
 Route::get('/booking',[HomeController::class, 'booking']);
+Route::get('/timkiem', [HomeController::class, 'timkiem']);
 Route::get('/cart', [CartController::class, 'show'])->name('guest.cart.show');
 Route::get('/add-to-cart', [CartController::class, 'add'])->name('guest.add-to-cart');
 Route::get('/delete-from-cart', [CartController::class, 'delete'])->name('guest.delete-from-cart');
@@ -55,6 +56,7 @@ Route::get('/cart-decrease', [CartController::class, 'decrease'])->name('guest.c
 Route::get('/payment', [PaymentController::class, 'show'])->name('guest.payment.show');
 Route::post('/payment', [PaymentController::class, 'store'])->name('guest.payment.store');
 Route::get('/orders/{order}', [OrderController::class, 'show'])->name('guest.orders.show');
+Route::get('/dangxuat',[HomeController::class, 'dangxuat']);
 
 //khachhang
 Route::middleware(['auth'])->prefix('guest')->name('guest.')->group(function(){ 
@@ -70,8 +72,8 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function (){
 
         //xác nhận đơn hàng
         Route::resource('orders', AdminOrderController::class)->only(['index', 'show']);
-      
         Route::get('orders/{order}/confirm', [AdminOrderController::class, 'confirm'])->name('orders.confirm');
+        Route::get('/orders/{order}', [OrderController::class, 'show'])->name('guest.orders.show');
 
 //danh sách thêm sửa xóa
         //nguyen lieu
@@ -79,6 +81,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function (){
         Route::resource('materials', MaterialController::class);
         //mon an
         Route::resource('typeofdishes', TypeofdishController::class);
+     
         Route::resource('dishes', DishController::class);
         
         //khu vuc
@@ -90,7 +93,5 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function (){
 
         //dom vi tinh
         Route::resource('units', UnitController::class);
-
-
 });
 ?>

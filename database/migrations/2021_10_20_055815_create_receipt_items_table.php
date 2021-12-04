@@ -17,8 +17,9 @@ class CreateReceiptItemsTable extends Migration
             $table->id();
             $table->timestamps();
             $table->foreignId('receipt_id');
-            $table->foreignId('importprice_id');
+            $table->foreignId('material_id');
             $table->foreignId('unit_id');
+            $table->unsignedInteger('price');
             $table->unsignedInteger('quatity');
         });
     }

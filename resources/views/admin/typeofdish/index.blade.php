@@ -35,12 +35,12 @@
                             <a href="/admin/typeofdishes/create" class="mr-4 text-dark"><i class="fas fa-plus"></i> Thêm mới</a>
                             <a href="" class="mr-3 text-dark"><i class="fas fa-download"></i> Xuất excel</a>
                         </div>
-                        <h2 class="text-center mt-5">Cập Nhật Loại Món Ăn</h2>
+                        <h2 class="text-center mt-5">CẬP NHẬT LOẠI MÓN ĂN</h2>
                     </div>
                     <div class="col-12 mt-4">
 
                       <div class="container">
-                      <button class=" btn btn_item mb-2 float-right"><a class="text-white" href="/admin/typeofdishes/show">Xem danh sách</a></button>
+                     
 
                         <table class="table table-bordered table-striped text-center">
                         <thead>
@@ -60,14 +60,14 @@
                               <td>{{ $typeofdish->id }}</td>
                               <td>{{ $typeofdish->name }}</td>
                               <td>
-                              <a href="{{ route('admin.typeofdishes.show',$typeofdish ) }}" title="xem"><i class="far fa-eye"></i></a>
-                                <a href="{{ route('admin.typeofdishes.edit', $typeofdish ) }}"><i class="fas fa-pen mr-5"></i></a>
 
-                                <form action="{{ route('admin.typeofdishes.destroy', $typeofdish) }}" method="post" class="d-inline">
-                                  @csrf
-                                  @method('DELETE')
-                                  <button href="" type="submit" class="btn btn-white"><i class="fas fa-trash-alt"></i></button>
-                                </form>
+                                <a href="{{ route('admin.typeofdishes.show',$typeofdish ) }}" title="xem"><i class="far fa-eye"></i></a>
+                                <a href="{{ route('admin.typeofdishes.edit', $typeofdish ) }}" title="sửa"><i class="fas fa-pen ml-3"></i></a>
+                                  <form action="{{ route('admin.typeofdishes.destroy', $typeofdish) }}" method="post" class="d-inline">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button href="" type="submit" class="btn btn-white" title="xóa"><i class="fas fa-trash-alt"></i></button>
+                                  </form>
                               </td>
                             </tr>
                             @endforeach

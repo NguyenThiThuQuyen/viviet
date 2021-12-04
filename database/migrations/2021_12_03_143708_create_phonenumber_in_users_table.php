@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSoftDeleteInImportpricesTable extends Migration
+class CreatePhonenumberInUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class CreateSoftDeleteInImportpricesTable extends Migration
      */
     public function up()
     {
-        Schema::table('import_prices', function (Blueprint $table) {
-            $table->softDeletes();
+        Schema::table('users', function (Blueprint $table) {
+            $table->string('phonenumber');
         });
     }
 
@@ -25,8 +25,8 @@ class CreateSoftDeleteInImportpricesTable extends Migration
      */
     public function down()
     {
-        Schema::table('import_prices', function (Blueprint $table) {
-            $table->dropColumn('deleted_at');
+        Schema::table('users', function (Blueprint $table) {
+            //
         });
     }
 }

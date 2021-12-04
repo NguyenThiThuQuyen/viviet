@@ -80,6 +80,8 @@
                             <label for="password_confirmation">Confirm Password</label>
                             <input type="password" class="form-control" name="password_confirmation" id="password_confirmation"  required/>
                                     <br />
+                            <label for="phonenumber">Phone number</label>
+                            <input type="text" class="form-control" id="phonenumber" name="phonenumber" required autofocus />
                             <div class="form-group form-check">
                                <!-- <button type="submit" class="btn btn_item float-right"><a href="">Submit</a></button> -->
                                 <x-button class="btn btn_item float-right">

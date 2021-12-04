@@ -17,7 +17,7 @@
                     <div class="col-12 mt-4">
 
                       <div class="container">
-                        <button class=" btn btn_item mb-2 float-right"><a class="text-white" href="/admin/materials/show">Xem danh sách</a></button>
+                        
                         <table class="table table-bordered table-striped text-center">
                         <thead>
                             <tr>
@@ -25,9 +25,7 @@
                               <th scope="col">Mã nguyên liệu</th>
                               <th scope="col">Tên nguyên liệu</th>
                               <th scope="col">Tên loại</th>
-                              <th scope="col">Giá</th>
                               <th scope="col">Điều chỉnh</th>
-                            
                             </tr>
                         </thead>
                         <tbody>
@@ -38,16 +36,16 @@
                               <td>{{ $material->id }}</td>
                               <td>{{ $material->name }}</td>
                               <td>{{ $material->typematerial->name??'error'}}</td>
-                              <!-- <td>{{ $material->currentprice['price'] }}</td> -->
-                              <td>{{ $material->currentprice->price??'error'}}</td> 
-                              <td>
-                                <a href="{{ route('admin.materials.edit', $material ) }}"><i class="fas fa-pen mr-4"></i></a>
-                                <form action="{{ route('admin.materials.destroy', $material) }}" method="post" class="d-inline">
-                                  @csrf
-                                  @method('DELETE')
-                                  <button href="" type="submit" class="btn btn-white"><i class="fas fa-trash-alt"></i></button>
-                                </form>
-                              </td>
+                              <td>                               
+                                    <a href="{{ route('admin.materials.show', $material) }}" title="xem"><i class="far fa-eye"></i></a>
+                                    <a href="{{ route('admin.materials.edit', $material) }}" title="sửa"><i class="fas fa-pen ml-3"></i></a>
+                                    <form action="{{ route('admin.materials.destroy', $material) }}" method="post" class="d-inline">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button href="" type="submit" class="btn btn-white" title="xóa"><i class="fas fa-trash-alt"></i></button>
+                                    </form>
+                                </td>
+                              
                             </tr>
                         @endforeach
                         @endif

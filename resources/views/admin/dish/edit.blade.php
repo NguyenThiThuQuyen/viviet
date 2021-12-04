@@ -35,6 +35,7 @@
                     <div class="col-12 text-center mt-5">
                         <h2>SỬA MÓN ĂN</h2>
                     </div>
+                    <div class="col-1"></div>
                     <div class="col-8">
                     <div class="form-container ml-5 mt-5">
                     <h5>Nhập thông tin:</h5>                    
@@ -61,8 +62,20 @@
                             <label for="image" class="col-sm-3 col-form-label form_label">Hình ảnh</label>
                             <div class="form-group ml-3 mt-2">
                                <input type="file" class="form-control-file" name="image" id="image"  value="{{ $dish->image }}">
-                               <img src="{{ Storage::url($dish->image) }}" alt=""  height="90" weight="85">
-                               
+                               <img src="{{ Storage::url($dish->image) }}" alt=""  height="90" weight="85">                                               
+                            </div>
+                        </div>
+                        <div class="form-group row mt-4">
+                            <label for="typeofdish_id" class="col-sm-3 col-form-label form_label">Loại món ăn</label>                            
+                            <div class="col-sm-8">
+                            <select class="custom-select" name="typeofdish_id"  value="{{ $dish->typeofdish_id }}>
+                                <option selected>Chọn</option>
+                                @if(isset($typeofdishes))
+                                @foreach($typeofdishes as $typeofdish)
+                                    <option value="{{ $typeofdish->id }}">{{ $typeofdish->name}}</option>
+                                @endforeach
+                                @endif
+                            </select>
                             </div>
                         </div>
 
@@ -81,7 +94,7 @@
                         <div class="form-group row float-right mr-5 mt-3" >
                             <div class="form-group form-check">
                             <button type="submit" class="btn btn_item mr-2">Lưu</button>
-                            <button type="submit" class="btn border border-dark text-dark bg-light mr-4"><a href="#"></a>Hủy</button>                    
+                            <button type="submit" class="btn border border-dark text-dark bg-light mr-4"><a href="/admin/dishes/edit"></a>Hủy</button>                    
         
                         </div> 
                         </div>

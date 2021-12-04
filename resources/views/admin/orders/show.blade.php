@@ -16,6 +16,46 @@
                     <div class="col-12 mt-4">
 
                       <div class="container">
+                      <table class="table table-bordered table-striped text-center">
+                        <thead>
+                            <tr>
+                              <th scope="col">Mã hóa đơn</th>
+                              <th scope="col">Tên khách hàng</th>
+                              <th scope="col">Tên nhân viên</th>
+                              <th scope="col">Tổng giá</th>
+                              <th scope="col">Điều chỉnh</th>                            
+                            </tr>
+                        </thead>
+                        <tbody>
+                        @if(isset($orders))
+                        @foreach($orders as $order)
+                            <tr>
+                                <td>{{ $order->id }}</td>
+                                <td>{{ $order->customer->name }}</td>
+                                <td>{{ $order->staff->name ?? 'Chưa có' }}</td>
+                                <td>{{ $order->subtotal}}</td>
+                                <td>
+                                    
+                             
+                                    <button class=" btn btn-secondary mx-3 px-2 float-left">
+                                        <a class="text-white" href="{{ route('admin.orders.show', $order ) }}">Xem</a>
+                                    </button>
+                                    @if($order->staff == null)
+                                    <button class=" btn btn-success  px-2 float-left">
+                                        <a class="text-white" href="{{ route('admin.orders.confirm', $order ) }}">Xác nhận</a>
+                                    </button>
+                                    @endif
+                                   
+                                </td>
+                            </tr>
+                        @endforeach
+                        @endif
+                        </tbody>
+                        </table>
+                      </div>
+                    <div class="col-12 mt-4">
+
+                      <div class="container">
 
                       <table class="table">
                         <thead>
@@ -31,17 +71,27 @@
                         @foreach($order->orderitems as $item)       
                             <tr>
                                 <td>{{ $item->dishprice->dish->name }}</td>
-                                <td><img src="{{ Storage::url($item->dishprice->dish->image) }}" alt=""  height="90" weight="85"></td>
+                                <td><img src="{{ Storage::url($item->dishprice->dish->image) }}" alt=""  height="100" weight="100"></td>
                                 <td>{{ $item->dishprice->price }}</td>
                                 <td>{{ $item->quatity }}</td>
-                                <td>{{ $item->dishprice->price * $item->quatity }}</td>
-                                
+                                <td>{{ $item->dishprice->price * $item->quatity }}</td>                                
                             </tr>
                         @endforeach
                         </tbody>
                     </table>
 
                       </div>
+                      <div class="row mb-3">
+        <div class="col-8"></div>
+        <div class="col-4">
+            <h4 class="">TỔNG CỘNG</h4>
+            <p class="container mt-2" style="border-bottom: 2px solid #222; width:100%;"></p>
+            <div class="mt-3">
+                <h5> Tổng tiền: {{$order->subtotal}}</h5>
+            </div>             
+        </div>
+    </div>
+                    
 
               
                     </div>

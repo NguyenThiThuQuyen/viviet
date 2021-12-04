@@ -20,13 +20,10 @@
                               <th scope="col">Mã nhà cung cấp</th>
                               <th scope="col">Tên nhà cung cấp</th>
                               <th scope="col">Địa chỉ</th>
-                              <th scope="col">Số điện thoại</th>
-                            
+                              <th scope="col">Số điện thoại</th>                          
                             </tr>
                           </thead>
-                          <tbody>
-                        @if(isset($suppliers))
-                        @foreach($suppliers as $supplier)
+                          <tbody>  
                             <tr>
                               <!-- <th scope="row">1</th> -->
                               <td>{{ $supplier->id }}</td>
@@ -34,10 +31,11 @@
                               <td>{{ $supplier->address }}</td>
                               <td>{{ $supplier->phonenumber }}</td>
                             </tr>
-                            @endforeach
-                          @endif
+                           
                           </tbody>
-                        </table>
+                          </table>
+                          <button class=" btn btn_item mb-2"><a class="text-white" href="/admin/suppliers/">Trở về</a></button>
+
                       </div>              
                     </div>
                 </div>

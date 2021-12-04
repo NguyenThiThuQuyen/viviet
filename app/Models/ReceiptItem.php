@@ -8,17 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class ReceiptItem extends Model
 {
     use HasFactory;
-    protected $fillable = ['receipt_id', 'importprice_id', 'unit_id', 'quatity'];
+    protected $fillable = ['receipt_id', 'material_id', 'unit_id', 'price', 'quatity'];
 
     public function receipt(){
         return $this->belongsTo(Receipt::class);
     }
 
-    public function importprice(){
-        return $this->belongsTo(ImportPrice::class);
-    }
-
     public function unit(){
         return $this->belongsTo(Unit::class);
+    }
+
+    public function material(){
+        return $this->belongsTo(Material::class);
     }
 }

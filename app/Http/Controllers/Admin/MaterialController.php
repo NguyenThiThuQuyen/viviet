@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Material;
 use App\Models\Typematerial;
+
 use Illuminate\Http\Request;
 
 class MaterialController extends Controller
@@ -44,15 +45,9 @@ class MaterialController extends Controller
             // 'name' => 'required|string', 
             'name' => ['required', 'string'], //dạng mảng
             'typematerial_id' => ['required', 'exists:typematerials,id'],
-            // 'price' => 'required|numeric|min:0'
-            'price' => ['required', 'exists:typematerials,id']
         ]);
 
-        $material = Material::create($data);
-        $material->importprices()->create([
-            'apply' => now(),
-            'price' => $request->price
-        ]);
+        Material::create($data);
         return redirect()->route('admin.materials.index');
     }
 
@@ -62,11 +57,11 @@ class MaterialController extends Controller
      * @param  \App\Models\Material  $material
      * @return \Illuminate\Http\Response
      */
-    public function show()
-    {
-        $materials = Material::all();
-        return view('admin.material.show', compact('materials'));
 
+
+    public function show(Material $material)
+    {
+        return view('admin.material.show', compact('material'));
     }
 
     /**
@@ -93,14 +88,9 @@ class MaterialController extends Controller
             //dạng chuỗi
             // 'name' => 'required|string', 
             'name' => ['required', 'string'], //dạng mảng
-            'price' => 'required|numeric|min:0'
 
         ]);
         $material->update($data);
-        $material->importprices()->create([
-            'apply' => now(),
-            'price' => $request->price
-        ]);
         return redirect()->route('admin.materials.index');
     }
 
@@ -115,7 +105,6 @@ class MaterialController extends Controller
      */
     public function destroy(Material $material)
     {
-        $material->importprices()->delete();
         $material->delete();
         return redirect()->route('admin.materials.index');
     }

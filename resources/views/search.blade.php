@@ -64,6 +64,8 @@
                 </div>
             </div>
         </div>
+       
+        
 
     <div class="text-center mx-auto">
         <div class="mt-2">
@@ -89,7 +91,6 @@
         </div>
 
         <div class="container mt-3" style="border-bottom: 2px solid #222; width:40%;"></div>
-        <div class="text-center"><h3><i>Món ăn theo loại</i></h3></div>
 
     </div>
 
@@ -98,8 +99,10 @@
             <input type="text" class="form-control-sm" style="border-radius: 0" name="tukhoa" placeholder="Tìm kiếm món ăn" aria-lable="Search">
             <button class="btn-sm btn-outline-dark mx-2" style="border-radius: 0" type="submit">Tìm kiếm</button>
         </form>
-
-            <!-- <div class="text-center"><h3><i>Menu theo loại</i></h3></div> -->
+        <div class="col-md-12 col-sm-12">
+            <i class="material-icons" style="font-size:14px; line-height: 3;"></i> <i>Tìm thấy {{ count($dishes) }} sản phẩm</i> 
+        </div>
+            <div class="text-center"><h3><i>Kết quả tìm kiếm</i></h3></div>
             <div class="row padding">
             
                 @if(isset($dishes))

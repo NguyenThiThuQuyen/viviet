@@ -54,11 +54,18 @@ class TableController extends Controller
      * @param  \App\Models\Table  $table
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show(Table $table)
     {
-        $tables = Table::all();
-        return view('admin.table.show', compact('tables'));
+        
+        return view('admin.table.show', compact('table'));
     }
+
+    // public function show($id)
+    // {
+    //     return view('admin.table.show', [
+    //         'table' =>Table::findOrFail($id)           
+    //     ]);
+    // }
 
     /**
      * Show the form for editing the specified resource.

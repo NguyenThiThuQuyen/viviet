@@ -2,7 +2,7 @@
 @extends('layout')
 @section('content')
 
-    <title>Trang chủ nè</title>
+    <title>Trang chủ</title>
     <div id="slide" class="carousel slide" data-ride="carousel">
         <ul class="carousel-indicators">
             <li data-target="#slide" data-slide-to="0" class="active"></li>

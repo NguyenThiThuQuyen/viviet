@@ -3,7 +3,6 @@
 @section('content')
 <title>Món ăn</title>
 
-
 <div class="container-fluid p-0">
         <div class="row mr-0">
             <div class="col-2">         
@@ -34,7 +33,7 @@
                         <div class="form-group form-check float-right">
                             <a href="" class="mr-3 text-dark"><i class="fas fa-download"></i> Xuất excel</a>
                         </div>
-                        <h2 class="text-center mt-5">Danh Sách Món Ăn</h2>
+                        <h2 class="text-center mt-5">XEM MÓN ĂN</h2>
                     </div>
                     <div class="col-12 mt-5">
 
@@ -53,8 +52,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                        @if(isset($dishes))
-                        @foreach($dishes as $dish)
+                   
                             <tr>
                               <!-- <th scope="row">1</th> -->
                                 <td>{{ $dish->id }}</td>
@@ -66,14 +64,12 @@
                                 </td>
                                 <td>{{ $dish->currentprice->price }}</td>
                                 <!-- <td>{{"gia"}}</td> -->
-                                <td>{{ $dish->description }}</td>
-
-                                
+                                <td>{{ $dish->description }}</td>                                
                             </tr>
-                        @endforeach
-                        @endif
+                    
                         </tbody>
                         </table>
+                        <button class=" btn btn_item mb-2"><a class="text-white" href="/admin/dishes/">Trở về</a></button>
                       </div>             
                     </div>
                 </div>

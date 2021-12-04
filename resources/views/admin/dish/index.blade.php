@@ -36,12 +36,12 @@
                             <a href="" class="mr-3 text-dark"><i class="fas fa-download"></i> Xuất excel</a>
                             
                         </div>
-                        <h2 class="text-center mt-5">Cập Nhật Món Ăn</h2>
+                        <h2 class="text-center mt-5">CẬP NHẬT MÓN ĂN</h2>
                     </div>
                     <div class="col-12 mt-3">
 
                         <div class="container">
-                        <button class=" btn btn_item mb-2 float-right"><a class="text-white" href="/admin/dishes/show">Xem danh sách</a></button>
+                        
                         <table class="table table-bordered table-striped text-center">
                         <thead>
                             <tr>
@@ -68,7 +68,7 @@
                                 </td>
                                 <td>{{ $dish->currentprice->price }}</td>
                                 <td>
-                         
+                               
                                     <a href="{{ route('admin.dishes.show', $dish ) }}" title="xem"><i class="far fa-eye"></i></a>
                                     <a href="{{ route('admin.dishes.edit', $dish ) }}" title="sửa"><i class="fas fa-pen ml-3"></i></a>
                                     <form action="{{ route('admin.dishes.destroy', $dish) }}" method="post" class="d-inline">
@@ -82,6 +82,7 @@
                         @endif
                         </tbody>
                         </table>
+                        
                       </div>             
                     </div>
                 </div>

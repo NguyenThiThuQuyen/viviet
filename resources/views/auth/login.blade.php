@@ -123,8 +123,8 @@
 
                             </div>
 
-                            <div class="text-center">
-                                <p>Thank you <i class="fas fa-heart color"></i> Created with viviet.com</p>
+                            <div class="text-center mt-5">
+                                <p>Don’t have an account?<a href="/register" class="text-danger mx-1">register</a></p>
                             </div>
                         </div>
 

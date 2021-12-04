@@ -11,12 +11,11 @@
                             <a href="{{ route('admin.units.create') }}" class="mr-4 text-dark"><i class="fas fa-plus"></i> Thêm mới</a>
                             <a href="" class="mr-3 text-dark"><i class="fas fa-download"></i> Xuất excel</a>
                         </div>
-                        <h3 class="text-center mt-5">CẬP NHẬT ĐƠN VỊ</h3>
+                        <h3 class="text-center mt-5">CẬP NHẬT ĐƠN VỊ TÍNH</h3>
                     </div>
                     <div class="col-12 mt-4">
 
                       <div class="container">
-                        <button class=" btn btn_item mb-2 float-right"><a class="text-white" href="/admin/units/show">Xem danh sách</a></button>
                         <table class="table table-bordered table-striped text-center">
                         <thead>
                             <tr>
@@ -35,14 +34,14 @@
                               <td>{{ $unit->id }}</td>
                               <td>{{ $unit->unit }}</td>
                               <td>
-                                <a href="{{ route('admin.units.edit', $unit ) }}" title="Sửa"><i class="fas fa-pen mr-4"></i></a>
-
-                                <form action="{{ route('admin.units.destroy', $unit) }}" title="Xóa" method="post" class="d-inline">
-                                  @csrf
-                                  @method('DELETE')
-                                  <button href="" type="submit" class="btn btn-white"><i class="fas fa-trash-alt"></i></button>
-                                </form>
-                              </td>
+                                  <a href="{{ route('admin.units.show', $unit ) }}" title="xem"><i class="far fa-eye mr-3"></i></a>
+                                  <a href="{{ route('admin.units.edit', $unit ) }}" title="sửa"><i class="fas fa-pen mx-3 ml-3"></i></a>
+                                    <form action="{{ route('admin.units.destroy', $unit) }}" method="post" class="d-inline">
+                                      @csrf
+                                      @method('DELETE')
+                                      <button href="" type="submit" class="btn btn-white" title="xóa"><i class="fas fa-trash-alt"></i></button>
+                                    </form>
+                                  </td>
                             </tr>
                             @endforeach
                           @endif

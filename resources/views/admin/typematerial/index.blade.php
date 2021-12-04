@@ -16,7 +16,6 @@
                     <div class="col-12 mt-4">
 
                       <div class="container">
-                        <button class=" btn btn_item mb-2 float-right"><a class="text-white" href="/admin/typematerials/show">Xem danh sách</a></button>
                         <table class="table table-bordered table-striped text-center">
                         <thead>
                             <tr>
@@ -34,14 +33,16 @@
                               <!-- <th scope="row">1</th> -->
                               <td>{{ $typematerial->id }}</td>
                               <td>{{ $typematerial->name }}</td>
+              
                               <td>
-                                <a href="{{ route('admin.typematerials.edit', $typematerial ) }}" title="Sửa"><i class="fas fa-pen mr-4"></i></a>
 
-                                <form action="{{ route('admin.typematerials.destroy', $typematerial) }}" title="Xóa" method="post" class="d-inline">
-                                  @csrf
-                                  @method('DELETE')
-                                  <button href="" type="submit" class="btn btn-white"><i class="fas fa-trash-alt"></i></button>
-                                </form>
+                                <a href="{{ route('admin.typematerials.show', $typematerial ) }}" title="xem"><i class="far fa-eye mr-3"></i></a>
+                                <a href="{{ route('admin.typematerials.edit', $typematerial ) }}" title="sửa"><i class="fas fa-pen mx-3 ml-3"></i></a>
+                                  <form action="{{ route('admin.typematerials.destroy', $typematerial) }}" method="post" class="d-inline">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button href="" type="submit" class="btn btn-white" title="xóa"><i class="fas fa-trash-alt"></i></button>
+                                  </form>
                               </td>
                             </tr>
                             @endforeach
