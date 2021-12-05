@@ -11,25 +11,15 @@ use Auth;
 class OrderController extends Controller
 {
     public function index(){
-        $orders = Order::all();
+        $orders = Order::all()->sortByDesc('id')->paginate(4);   
         return view('admin.orders.index', compact('orders'));
     }
-
-    // public function showorder(){
-    //     $orders = Order::all();
-    //     return view('admin.orders.show', compact('orders'));
-    // }
 
     public function show(Order $order){
         return view('admin.orders.show', compact('order'));
     }
     
-    // public function show($id)
-    // {
-    //     $cours = Course::findOrFailnd($id);
-    //     $lessons = course::findOrFail($id)->lesson;
-    //     return view('pages.lessons', compact('lessons', 'cours'));
-    // }
+
 
     public function confirm(Order $order){
         $order->update([

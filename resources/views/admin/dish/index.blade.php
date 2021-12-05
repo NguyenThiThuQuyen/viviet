@@ -38,15 +38,20 @@
                         </div>
                         <h2 class="text-center mt-5">CẬP NHẬT MÓN ĂN</h2>
                     </div>
-                    <div class="col-12 mt-3">
-
+                    <div class="col-12 mt-2">
                         <div class="container">
-                        
+                        <form action="" method="get" class="form-inline my-3">
+                            <div class="form-group">
+                                <input class="form-control-sm" name="key" placeholder="Tìm kiếm món ăn">
+                            </div>
+                            <button class="btn-sm btn-outline-dark mx-2" type="submit">Tìm kiếm</button>
+                        </form>
+                      
                         <table class="table table-bordered table-striped text-center">
                         <thead>
                             <tr>
                               <!-- <th scope="col">STT</th> -->
-                              <th scope="col">Mã món ăn</th>
+                              
                               <th scope="col">Tên món ăn</th>
                               <th scope="col">Tên loại</th>
                               <th scope="col">Hình ảnh</th>
@@ -56,10 +61,8 @@
                         </thead>
                         <tbody>
                         @if(isset($dishes))
-                        @foreach($dishes as $dish)
-                            <tr>
-                              <!-- <th scope="row"></th> -->
-                                <td>{{ $dish->id }}</td>
+                        @foreach($dishes as $key => $dish)
+                            <tr>                              
                                 <td>{{ $dish->name }}</td>
                                 <td>{{ $dish->typeofdish->name??'error'}}</td>
                                 <td>                            
@@ -82,6 +85,9 @@
                         @endif
                         </tbody>
                         </table>
+                        <div>
+                            {{$dishes->appends(request()->all())->links()}}
+                        </div>
                         
                       </div>             
                     </div>

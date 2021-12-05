@@ -15,7 +15,10 @@ class TableController extends Controller
      */
     public function index()
     {
-        $tables = Table::all();
+        $tables = Table::all()->sortByDesc('id')->paginate(4);
+        if($key = request()->key){
+            $tables = Table::where('number','like','%'.$key.'%')->paginate(4);
+    }
         return view('admin.table.index', compact('tables'));
     }
 

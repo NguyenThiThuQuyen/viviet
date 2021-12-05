@@ -1,6 +1,6 @@
 @extends('guest.layout')
 @section('content')
-
+@include('sweetalert::alert')
 <div class="container-fluid">
     <div class="row mt-4 ml-1">
         <div class="col-5 mb-5" style="border: 1px solid">
@@ -20,17 +20,17 @@
                     <input type="text" class="form-control" name="phonenumber" id="phonenumber">                              
                 </div>
             </div>
-            <div class="form-group row ml-3 mb-5">
+            <div class="form-group row ml-3 mb-3">
             <label for="email" class="col-sm-3 col-form-label form_label">Email</label>
                 <div class="col-sm-11">
                     <input type="email" class="form-control" name="email" id="email">                              
                 </div>
             </div>
-            <button type="submit" class="btn btn-outline btn-lg navbar-bg btn-light text-white mr-5 float-right">
+            <button type="submit" class="btn btn-outline btn-lg navbar-bg btn-light text-white mb-2 mr-5 float-right">
             ĐẶT MÓN
-
-            </button>
+            </button>              
         </form>
+       
         </div>
 
         <div class="col-7">

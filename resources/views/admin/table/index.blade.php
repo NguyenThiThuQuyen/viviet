@@ -16,6 +16,7 @@
                     </div>
                     <div class="col-12 mt-4">
                       <div class="container">
+                     
                         <table class="table table-bordered table-striped text-center">
                         <thead>
                             <tr>
@@ -38,8 +39,8 @@
                              
                               <td>
                                
-                                    <a href="{{ route('admin.tables.show', $table ) }}" title="xem"><i class="far fa-eye"></i></a>
-                                    <a href="{{ route('admin.tables.edit', $table ) }}" title="sửa"><i class="fas fa-pen ml-3"></i></a>
+                                    <a href="{{ route('admin.tables.show', $table ) }}" title="xem"><i class="far fa-eye mr-3"></i></a>
+                                    <a href="{{ route('admin.tables.edit', $table ) }}" title="sửa"><i class="fas fa-pen mx-3 ml-3"></i></a>
                                     <form action="{{ route('admin.tables.destroy', $table) }}" method="post" class="d-inline">
                                         @csrf
                                         @method('DELETE')
@@ -51,6 +52,9 @@
                         @endif
                         </tbody>
                         </table>
+                        <div>
+                            {{$tables->appends(request()->all())->links()}}
+                        </div>
                       </div>
 
               

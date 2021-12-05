@@ -100,7 +100,7 @@
             <button class="btn-sm btn-outline-dark mx-2" style="border-radius: 0" type="submit">Tìm kiếm</button>
         </form>
         <div class="col-md-12 col-sm-12">
-            <i class="material-icons" style="font-size:14px; line-height: 3;"></i> <i>Tìm thấy {{ count($dishes) }} sản phẩm</i> 
+            <i class="material-icons" style="font-size:14px; line-height: 3;"></i> <i>Tìm thấy {{ count($dishes) }} món ăn</i> 
         </div>
             <div class="text-center"><h3><i>Kết quả tìm kiếm</i></h3></div>
             <div class="row padding">

@@ -15,7 +15,10 @@ class DishController extends Controller
      */
     public function index()
     {
-        $dishes = Dish::all();
+        $dishes = Dish::all()->sortByDesc('id')->paginate(4);
+            if($key = request()->key){
+                $dishes = Dish::where('name','like','%'.$key.'%')->paginate(4);
+        }
         return view('admin.dish.index', compact('dishes'));
     }
 
@@ -133,4 +136,5 @@ class DishController extends Controller
         return redirect()->route('admin.dishes.index');
 
     }
+
 }

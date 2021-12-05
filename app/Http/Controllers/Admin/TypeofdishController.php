@@ -15,7 +15,10 @@ class TypeofdishController extends Controller
      */
     public function index()
     {
-        $typeofdishes = Typeofdish::all();
+        $typeofdishes = Typeofdish::all()->sortByDesc('id')->paginate(4);
+        if($key = request()->key){
+            $typeofdishes = Typeofdish::where('name','like','%'.$key.'%')->paginate(4);
+    }
         return view('admin.typeofdish.index', compact('typeofdishes'));
     }
 

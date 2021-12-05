@@ -17,7 +17,10 @@ class MaterialController extends Controller
      */
     public function index()
     {
-        $materials = Material::all();
+        $materials = Material::all()->sortByDesc('id')->paginate(4);
+        if($key = request()->key){
+            $materials = Material::where('name','like','%'.$key.'%')->paginate(4);
+    }
         return view('admin.material.index', compact('materials'));
     }
 
@@ -72,7 +75,8 @@ class MaterialController extends Controller
      */
     public function edit(Material $material)
     {
-        return view('admin.material.edit', compact('material'));
+        $typematerials = Typematerial::all();
+        return view('admin.material.edit', compact('material', 'typematerials'));
     }
 
     /**

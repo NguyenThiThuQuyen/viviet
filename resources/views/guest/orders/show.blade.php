@@ -36,7 +36,7 @@
             </div>             
         </div>
     </div>
-    <div class="text-center"><i>ViViet xin chân thành cảm ơn quý khách <i class="fas fa-heart"></i></i></div>
+    <div class="text-center text-danger"><i>ViViet xin chân thành cảm ơn quý khách <i class="fas fa-heart"></i></i></div>
 </div>
 </div>
     </div>

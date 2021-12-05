@@ -15,7 +15,10 @@ class SupplierController extends Controller
      */
     public function index()
     {
-        $suppliers = Supplier::all();
+        $suppliers = Supplier::all()->sortByDesc('id')->paginate(4);
+        if($key = request()->key){
+            $suppliers = Supplier::where('name','like','%'.$key.'%')->paginate(4);
+    }
         return view('admin.supplier.index', compact('suppliers'));
     }
 

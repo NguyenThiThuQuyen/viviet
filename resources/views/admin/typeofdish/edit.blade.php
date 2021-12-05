@@ -32,7 +32,9 @@
                     <div class="col-12 text-center mt-5">
                         <h2>SỬA LOẠI MÓN ĂN</h2>
                     </div>
+                    <div class="col-1"></div>
                     <div class="col-8">
+                    
                     <div class="form-container ml-5 mt-5">
                     <h5>Nhập thông tin:</h5>
                    
@@ -51,7 +53,7 @@
                         <div class="form-group row float-right mr-5 mt-3">
                             <div class="form-group form-check">
                             <button type="submit" class="btn btn_item mr-2">Lưu</button>
-                            <button type="" class="btn border border-dark text-dark bg-light mr-3"><a href="{{ route('admin.typeofdishes.edit', $typeofdish ) }}"></a>Hủy</button>                    
+                            <button type="" class="btn btn-secondary mr-3"><a href="{{ route('admin.typeofdishes.edit', $typeofdish ) }}"></a>Hủy</button>                    
         
                             </div> 
                         </div>

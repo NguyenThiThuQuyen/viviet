@@ -8,6 +8,7 @@ use App\Models\Dish;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+Use Alert;
 
 class CartController extends Controller
 {

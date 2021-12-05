@@ -40,8 +40,12 @@
                     <div class="col-12 mt-4">
 
                       <div class="container">
-                     
-
+                      <form action="" method="get" class="form-inline my-3">
+                            <div class="form-group">
+                                <input class="form-control-sm" name="key" placeholder="Tìm kiếm món ăn">
+                            </div>
+                            <button class="btn-sm btn-outline-dark mx-2" type="submit">Tìm kiếm</button>
+                        </form>
                         <table class="table table-bordered table-striped text-center">
                         <thead>
                             <tr>
@@ -74,6 +78,9 @@
                           @endif
                           </tbody>
                         </table>
+                        <div>
+                            {{$typeofdishes->appends(request()->all())->links()}}
+                        </div>
                       </div>           
                     </div>
                 </div>

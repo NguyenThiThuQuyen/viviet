@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\TypeofdishController;
 use App\Http\Controllers\Admin\DishController;
 use App\Http\Controllers\Admin\UnitController;
 use App\Http\Controllers\Admin\TableController;
+use App\Http\Controllers\Admin\ReceiptController;
 use App\Http\Controllers\Admin\SupplierController;
 use App\Http\Controllers\Admin\OrderController as AdminOrderController;
 use App\Http\Controllers\Guest\CartController;
@@ -73,7 +74,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function (){
         //xác nhận đơn hàng
         Route::resource('orders', AdminOrderController::class)->only(['index', 'show']);
         Route::get('orders/{order}/confirm', [AdminOrderController::class, 'confirm'])->name('orders.confirm');
-        Route::get('/orders/{order}', [OrderController::class, 'show'])->name('guest.orders.show');
+        
 
 //danh sách thêm sửa xóa
         //nguyen lieu
@@ -83,7 +84,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function (){
         Route::resource('typeofdishes', TypeofdishController::class);
      
         Route::resource('dishes', DishController::class);
-        
+       
         //khu vuc
         Route::resource('areas', AreaController::class);
         //ban
@@ -93,5 +94,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function (){
 
         //dom vi tinh
         Route::resource('units', UnitController::class);
+
+        Route::resource('receipts', ReceiptController::class);
 });
 ?>

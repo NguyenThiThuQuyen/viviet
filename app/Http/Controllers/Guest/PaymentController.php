@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
 use App\Models\Order;
+use Alert;
 
 
 class PaymentController extends Controller
@@ -26,8 +27,6 @@ class PaymentController extends Controller
         ]
       );
     // return $user;
-
-
       //khi email đã tồn tại rồi nhưng có một tên khác cập nhật lại tên
                 //   $user->update([
                 //     'name' => $request->name,
@@ -53,6 +52,7 @@ class PaymentController extends Controller
             }
             return $order;
     });
+   
         return redirect()->route('guest.orders.show', $order);
     }
 }

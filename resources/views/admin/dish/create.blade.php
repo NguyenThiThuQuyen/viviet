@@ -31,7 +31,7 @@
             <div class="col-10">
                 <div class="row">
                     <div class="col-12 text-center mt-4">
-                        <h2>Thêm Mới Món Ăn</h2>
+                        <h2>THÊM MỚI MÓN ĂN</h2>
                     </div>
                     <div class="col-1"></div>
                     <div class="col-8">
@@ -89,7 +89,7 @@
                         <div class="form-group row float-right mr-5 mt-3" >
                             <div class="form-group form-check">
                             <button type="submit" class="btn btn_item">Lưu</button>
-                            <button type="submit" class="btn border border-dark text-dark bg-light"><a href="#"></a>Hủy</button>                            
+                            <button type="submit" class="btn btn-secondary text-white mr-4"><a href="#"></a>Hủy</button>                            
                             </div> 
                         </div>
                     </form>   

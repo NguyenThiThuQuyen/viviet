@@ -147,31 +147,40 @@
             <li class="nav-item mx-2">
               <a class="nav-link" href="#">Khách hàng</a>
             </li>
-            <li class="nav-item mx-2">
+            <li class="nav-item">
                 <a class="nav-link" href="#">Nhân sự</a>
             </li>
             <li class="nav-item mx-2">
                 <a class="nav-link" href="{{ route('admin.dishes.index') }}">Món ăn</a>
             </li>
-            <li class="nav-item mx-2">
+            <li class="nav-item">
                 <a class="nav-link" href="{{ route('admin.tables.index') }}">Quản lý bàn</a>
             </li>
             <li class="nav-item mx-2">
                 <a class="nav-link" href="{{ route('admin.materials.index') }}">Quản lý kho</a>
             </li>
-            <li class="nav-item mx-2">
+            <li class="nav-item">
                 <a class="nav-link" href="#">Báo cáo</a>
             </li>
           </ul>
           <div class="float-right">
             <ul class="navbar-nav">
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-togglet" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-user"></i> Admin
-                </a>
-                <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">Đăng xuất</a>
+            <li class="nav-item">
+                <div>
+                @if(Auth::check())
+              <!-- <div class="col-md-1 col-sm-1"></div> -->
+              <div class="col-md-1 col-sm-1">
+                <div class="btn-group">
+                  <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-user" style="font-size:23px"></i> {{Auth::user()->name}}
+                  </button>
+                  <div class="dropdown-menu bg-dark">
+                    <a class="dropdown-item text-white" stype="width: 40px" href="/dangxuat">Đăng xuất</a>
+                  </div>
                 </div>
+              </div>
+              @endif
+                </div> 
             </li>
             </ul>
         </div>

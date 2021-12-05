@@ -40,7 +40,7 @@
                         <div class="form-group row float-right mr-5 mt-3">
                             <div class="form-group form-check">
                             <button type="submit" class="btn btn_item mr-2">Lưu</button>
-                            <button type="submit" class="btn border border-dark text-dark bg-light mr-4"><a href="#"></a>Hủy</button>                    
+                            <button type="submit" class="btn btn-secondary mr-4"><a href="#"></a>Hủy</button>                    
                             </div> 
                         </div>
                     </form>   

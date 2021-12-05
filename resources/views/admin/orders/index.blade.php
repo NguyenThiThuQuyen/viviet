@@ -11,11 +11,12 @@
                         <div class="form-group form-check float-right">
                             <a href="" class="mr-3 text-dark"><i class="fas fa-download"></i> Xuất excel</a>
                         </div>
-                        <h2 class="text-center mt-5">Cập Nhật Bàn Ăn</h2>
+                        <h2 class="text-center mt-5">PHIẾU ORDER</h2>
                     </div>
                     <div class="col-12 mt-4">
 
                       <div class="container">
+                     
                       <table class="table table-bordered table-striped text-center">
                         <thead>
                             <tr>
@@ -35,10 +36,9 @@
                                 <td>{{ $order->staff->name ?? 'Chưa có' }}</td>
                                 <td>{{ $order->subtotal}}</td>
                                 <td>
-                                    
-                             
+                            
                                     <button class=" btn btn-secondary mx-3 px-2 float-left">
-                                        <a class="text-white" href="{{ route('admin.orders.show', $order ) }}">Xem</a>
+                                    <a class="text-white" href="{{ route('admin.orders.show', ['order' => $order] ) }}">Xem</a>
                                     </button>
                                     @if($order->staff == null)
                                     <button class=" btn btn-success  px-2 float-left">
@@ -52,6 +52,9 @@
                         @endif
                         </tbody>
                         </table>
+                        <div>
+                            {{$orders->appends(request()->all())->links()}}
+                        </div>
                       </div>
 
               

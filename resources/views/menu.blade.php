@@ -74,11 +74,11 @@
                     <ul>
                             @if(isset($typeofdishes))
                             @foreach($typeofdishes as $typeofdish)
-                        <li class="d-inline mr-4 ">
-                            <button type="button" class="btn btn-outline-dark btn-lg btn-light mt-4">
-                                <a href="{{ route('guest.menu.typeofdish', ['typeofdish' => $typeofdish]) }}" class="text-white" style="text-decoration: none;">{{ $typeofdish->name }}</a>
-                            </button>
-                        </li>
+                                <li class="d-inline mr-4 ">
+                                    <button type="button" class="btn btn-outline-dark btn-lg btn-light mt-4">
+                                        <a href="{{ route('guest.menu.typeofdish', ['typeofdish' => $typeofdish]) }}" class="text-white" style="text-decoration: none;">{{ $typeofdish->name }}</a>
+                                    </button>
+                                </li>
                             @endforeach
                             @endif
                     </ul>

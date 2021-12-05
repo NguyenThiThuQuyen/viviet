@@ -31,6 +31,8 @@ class Dish extends Model
     {
         return $this->hasOne(Dishprice::class)->latestOfMany();
     }
+
+
     
 }
 

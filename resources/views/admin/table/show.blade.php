@@ -9,7 +9,7 @@
                         <div class="form-group form-check float-right">
                             <a href="" class="mr-3 text-dark"><i class="fas fa-download"></i> Xuất excel</a>
                         </div>
-                        <h2 class="text-center mt-5">Danh Sách Bàn Ăn</h2>
+                        <h2 class="text-center mt-5">XEM BÀN ĂN</h2>
                     </div>
                     <div class="col-12 mt-4">
 

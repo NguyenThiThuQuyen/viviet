@@ -1,8 +1,9 @@
 @extends('guest.layout')
 @section('content')
 <title>Giỏ hàng</title>
-<div class="container mt-5">
-    <table class="table">
+<div class="container mt-3">
+    <div class="text-center"><h3><i>Giỏ hàng</i></h3></div>
+    <table class="table mt-3">
         <thead>
             <tr>
                 <th scope="col">Tên món ăn</th>
@@ -32,7 +33,7 @@
         </tbody>
     </table>
     <button type="button" class="btn btn-outline btn-lg navbar-bg btn-light">
-        <a href="/menu" class="text-white" style="text-decoration: none;">Tiếp tục đặc món</a>
+        <a href="/menu" class="text-white" style="text-decoration: none;">Tiếp tục đặt món</a>
     </button>
     <div class="row mb-5">
         <div class="col-8"></div>
@@ -44,7 +45,7 @@
             </div>
             @if(Cart::count() != 0)
             <button type="button" class="btn btn-outline btn-lg navbar-bg btn-light mt-4">
-                <a href="{{ route('guest.payment.show') }}" class="text-white" style="text-decoration: none;"><i class="fas fa-check mr-2"></i>TIẾN HÀNH ĐẶC BÀN</a>
+                <a href="{{ route('guest.payment.show') }}" class="text-white" style="text-decoration: none;"><i class="fas fa-check mr-2"></i>TIẾN HÀNH ĐẶT BÀN</a>
           </button>
           @endif
         </div>
